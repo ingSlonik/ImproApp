@@ -27,7 +27,7 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 export default function Timer() {
   const refTimer = useRef(setTimeout(() => {}, 0));
-  const [timer, setTimer] = useState(0);
+  const [timer, setTimer] = useState<number | null>(null);
   const [pause, setPause] = useState(false);
   const [setTime, setSetTime] = useState(0);
 
@@ -49,6 +49,8 @@ export default function Timer() {
       refTimer.current = setTimeout(() => {
         isMounted.current && setTimer(timer - 1);
       }, 1000);
+    } else if (timer === 0) {
+      setTimer(null);
     }
   }, [timer, pause]);
 
@@ -94,16 +96,16 @@ export default function Timer() {
         }}>
         <TouchableNativeFeedback onPress={() => setVibration(!vibration)}>
           <Icon
-            name="vibration"
-            color={vibration ? 'black' : '#AAA'}
+            name={vibration ? 'vibrate' : 'vibrate-off'}
+            color="black"
             size={32}
           />
         </TouchableNativeFeedback>
         <View style={{paddingLeft: 16}} />
         <TouchableNativeFeedback onPress={() => setSound(!sound)}>
           <Icon
-            name={sound ? 'volume-up' : 'volume-off'}
-            color={sound ? 'black' : '#AAA'}
+            name={sound ? 'volume-high' : 'volume-off'}
+            color="black"
             size={32}
           />
         </TouchableNativeFeedback>
@@ -117,13 +119,13 @@ export default function Timer() {
           <Text style={{fontSize: 100, textAlign: 'center'}}>
             <Time>{timer}</Time>
           </Text>
-          {refTimer.current && (
+          {timer != null && (
             <View style={{flexDirection: 'row'}}>
               <Button onPress={() => setPause(!pause)}>
                 {pause ? 'Pokračovat' : 'Pauza'}
               </Button>
               <View style={{width: 16}} />
-              <Button onPress={() => setTimer(0)}>Stop</Button>
+              <Button onPress={() => setTimer(null)}>Stop</Button>
             </View>
           )}
         </View>
@@ -172,8 +174,8 @@ export default function Timer() {
 }
 
 function Time({children}) {
-  const min = Math.floor(children / 60);
-  const sec = children % 60;
+  const min = Math.floor(Number(children) / 60);
+  const sec = Number(children) % 60;
 
   return (
     <>
