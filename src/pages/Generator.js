@@ -4,8 +4,8 @@
  */
 
 import React, {useState} from 'react';
-
-import {View, Text} from 'react-native';
+import {View, Text, TouchableNativeFeedback, Linking} from 'react-native';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import {Content, H1, H2, Button} from '../components/Elements';
 
@@ -67,10 +67,16 @@ export default function Generator() {
           <Word>{genre}</Word>
         </View>
       </View>
-      <Text>
-        Přátelé, sbírka slov není velká a už vůbec né ucelená. Když mi ji
-        pomůžete dát dohromady, budu Vám velice vděčen.
-      </Text>
+      <TouchableNativeFeedback
+        onPress={() =>
+          Linking.openURL('https://github.com/ingSlonik/ImproApp')
+        }>
+        <Text>
+          Přátelé, sbírka slov není velká a už vůbec né ucelená. Když mi ji
+          pomůžete dát dohromady, budu Vám velice vděčen.
+          <Icon name="github-circle" />
+        </Text>
+      </TouchableNativeFeedback>
     </Content>
   );
 }
