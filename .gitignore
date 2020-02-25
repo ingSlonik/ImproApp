@@ -61,3 +61,4 @@ buck-out/
 # Project
 __workspace__/
 package-lock.json
+android/gradle.properties
