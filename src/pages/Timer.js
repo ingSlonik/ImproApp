@@ -38,14 +38,19 @@ export default function Timer() {
   const [vibration, setVibration] = useState(true);
 
   const isMounted = useRef(true);
-  useEffect(() => () => (isMounted.current = false), []);
+  useEffect(
+    () => () => {
+      isMounted.current = false;
+    },
+    [],
+  );
 
   const half = Math.round(setTime / 2);
 
   // set timer
   useEffect(() => {
     clearTimeout(refTimer.current);
-    if (timer > 0 && pause === false) {
+    if (timer !== null && timer > 0 && pause === false) {
       refTimer.current = setTimeout(() => {
         isMounted.current && setTimer(timer - 1);
       }, 1000);
@@ -61,7 +66,7 @@ export default function Timer() {
         Vibration.vibrate(500);
       }
     }
-    if (sound) {
+    if (sound && timer !== null) {
       if (timer === 0) {
         playRefereeWhistle();
       } else if ([5, 3, 1].includes(timer)) {
