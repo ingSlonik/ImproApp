@@ -3,14 +3,22 @@
  * @flow
  */
 
-import React from 'react';
+import React, {type Node} from 'react';
 import {View, Text, TouchableNativeFeedback} from 'react-native';
 
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import {primary, primaryText} from '../services/colors';
 
-export default function ImproToolbar({children, icon, onMenuClick}) {
+type ImproToolbarProps = {
+  icon: 'menu' | 'arrow-left',
+  onMenuClick: () => mixed,
+};
+
+export default function ImproToolbar({
+  icon,
+  onMenuClick,
+}: ImproToolbarProps): Node {
   return (
     <View
       style={{

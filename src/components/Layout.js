@@ -3,7 +3,7 @@
  * @flow
  */
 
-import React, {useRef} from 'react';
+import React, {useRef, type Node} from 'react';
 import {View, StatusBar, DrawerLayoutAndroid} from 'react-native';
 
 import Toolbar from './Toolbar';
@@ -11,7 +11,12 @@ import Navigation from './Navigation';
 
 import {primaryDark} from '../services/colors';
 
-export default function Layout({children, onChange}) {
+type LayoutProps = {
+  children: Node,
+  onChange: (page: string) => mixed,
+};
+
+export default function Layout({children, onChange}: LayoutProps) {
   const drawer = useRef(null);
   return (
     <>
@@ -23,7 +28,9 @@ export default function Layout({children, onChange}) {
         renderNavigationView={() => (
           <Navigation
             onChange={page => {
-              drawer.current.closeDrawer();
+              if (drawer.current !== null) {
+                drawer.current.closeDrawer();
+              }
               if (page) {
                 onChange(page);
               }
@@ -33,7 +40,9 @@ export default function Layout({children, onChange}) {
         <View style={{flex: 1, alignItems: 'stretch'}}>
           <Toolbar
             icon="menu"
-            onMenuClick={() => drawer.current.openDrawer()}
+            onMenuClick={() =>
+              drawer.current !== null && drawer.current.openDrawer()
+            }
           />
           <View style={{flexGrow: 1}}>{children}</View>
         </View>

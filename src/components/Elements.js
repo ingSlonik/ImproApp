@@ -3,11 +3,10 @@
  * @flow
  */
 
-import React from 'react';
+import React, {type Node} from 'react';
 import {
   View,
   Text,
-  Button as ButtonNative,
   Modal as ModalNative,
   TouchableNativeFeedback,
 } from 'react-native';
@@ -21,7 +20,7 @@ import {
   secondaryText,
 } from '../services/colors';
 
-export function Content({children}) {
+export function Content({children}: {children: Node}): Node {
   return (
     <View style={{position: 'relative', flexGrow: 1, padding: 16}}>
       {children}
@@ -29,7 +28,7 @@ export function Content({children}) {
   );
 }
 
-export function H1({children}) {
+export function H1({children}: {children: string}): Node {
   return (
     <View>
       <Text style={{fontSize: 30, fontWeight: 'bold', color: primaryText}}>
@@ -39,7 +38,7 @@ export function H1({children}) {
   );
 }
 
-export function H2({children}) {
+export function H2({children}: {children: string}): Node {
   return (
     <View>
       <Text style={{fontSize: 25, color: primaryText}}>{children}</Text>
@@ -47,7 +46,13 @@ export function H2({children}) {
   );
 }
 
-export function Button({children, onPress}) {
+export function Button({
+  children,
+  onPress,
+}: {
+  children: Node,
+  onPress: () => void,
+}): Node {
   // return <ButtonNative onPress={onPress} title={children} />;
   return (
     <TouchableNativeFeedback onPress={onPress}>
@@ -72,7 +77,7 @@ export function Button({children, onPress}) {
   );
 }
 
-export function Fab({icon, onPress}) {
+export function Fab({icon, onPress}: {icon: string, onPress: () => void}) {
   return (
     <TouchableNativeFeedback onPress={onPress}>
       <View
@@ -94,7 +99,23 @@ export function Fab({icon, onPress}) {
   );
 }
 
-export function Modal({show, title, button, onPress, onClose, children}) {
+type ModalProps = {
+  show: boolean,
+  title: string,
+  button: string,
+  children: Node,
+  onPress: () => void,
+  onClose: () => void,
+};
+
+export function Modal({
+  show,
+  title,
+  button,
+  onPress,
+  onClose,
+  children,
+}: ModalProps) {
   return (
     <ModalNative
       animationType="fade"
