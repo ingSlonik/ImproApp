@@ -11,7 +11,11 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import {Modal} from './Elements';
 import Toolbar from './Toolbar';
 
-export default function Navigation({onChange}) {
+export default function Navigation({
+  onChange,
+}: {
+  onChange: (page: null | string) => mixed,
+}) {
   const [showModal, setShowModal] = useState(false);
 
   return (
@@ -23,7 +27,11 @@ export default function Navigation({onChange}) {
           text="Generátor slov"
           onPress={() => onChange('generator')}
         />
-        <NavItem icon="timer" text="Stopky" onPress={() => onChange('timer')} />
+        <NavItem
+          icon="timer"
+          text="Impro stopky"
+          onPress={() => onChange('timer')}
+        />
         <NavItem
           icon="format-list-bulleted"
           text="Seznam kategorií"

@@ -90,7 +90,7 @@ export default function Timer() {
 
   return (
     <Content>
-      <H1>Stopky</H1>
+      <H1>Impro stopky</H1>
 
       <View
         style={{

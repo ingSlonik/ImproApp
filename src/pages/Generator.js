@@ -52,7 +52,7 @@ export default function Generator() {
         </View>
 
         <View>
-          <H2>Místo ({getCountPlaces()})</H2>
+          <H2>Prostředí ({getCountPlaces()})</H2>
           <Button onPress={() => setPlace(getRandomPlace())}>
             Generovat místo
           </Button>
