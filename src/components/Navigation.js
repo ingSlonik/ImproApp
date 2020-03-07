@@ -53,8 +53,15 @@ export default function Navigation({
           button="Rozumím"
           onPress={() => setShowModal(false)}>
           <Text>
-            Tato aplikace je na světě díky nejstarší, nepřejmenované, nerozpadlé
-            improvizační skupině nejvyšší improvizační soutěže v Čechách.
+            Tato aplikace je na světě díky nejstaršímu nepřejmenovanému
+            nerozpadlému improvizačnímu týmu nejvyšší české improvizační soutěže
+            <Text
+              style={{color: 'blue'}}
+              onPress={() => Linking.openURL('https://improliga.cz/')}>
+              ImproLiga.cz
+            </Text>
+            
+            .
           </Text>
           <Text style={{paddingTop: 16}}>
             Nejdříve moc děkuji improlize, díky které zde máme seznam kategorií
