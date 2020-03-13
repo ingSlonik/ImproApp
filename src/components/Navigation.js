@@ -54,13 +54,12 @@ export default function Navigation({
           onPress={() => setShowModal(false)}>
           <Text>
             Tato aplikace je na světě díky nejstaršímu nepřejmenovanému
-            nerozpadlému improvizačnímu týmu nejvyšší české improvizační soutěže
+            nerozpadlému improvizačnímu týmu nejvyšší české improvizační soutěže{' '}
             <Text
               style={{color: 'blue'}}
               onPress={() => Linking.openURL('https://improliga.cz/')}>
               ImproLiga.cz
             </Text>
-            
             .
           </Text>
           <Text style={{paddingTop: 16}}>

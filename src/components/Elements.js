@@ -131,7 +131,7 @@ export function Modal({
         }}>
         <View style={{backgroundColor: 'white', padding: 16, borderRadius: 8}}>
           <H1>{title}</H1>
-          <View style={{marginTop: 16, marginBottom: 32}}>{children}</View>
+          <View style={{marginTop: 16, marginBottom: 16}}>{children}</View>
           <Button onPress={onPress}>{button}</Button>
         </View>
       </View>

@@ -73,7 +73,7 @@ export default function Generator() {
         }>
         <Text>
           Přátelé, sbírka slov není velká a už vůbec né ucelená. Když mi ji
-          pomůžete dát dohromady, budu Vám velice vděčen.
+          pomůžete dát dohromady, budu Vám velice vděčen.{' '}
           <Icon name="github-circle" />
         </Text>
       </TouchableNativeFeedback>
