@@ -120,9 +120,22 @@ export default function Timer() {
 
       <View style={{flexGrow: 1, justifyContent: 'space-between'}}>
         <View style={{flexGrow: 1, justifyContent: 'center'}}>
-          <Text style={{fontSize: 20}}>
-            {setTime > 0 && <Time>{setTime}</Time>}
-          </Text>
+          <View style={{flexDirection: 'row'}}>
+            <Text style={{fontSize: 20}}>
+              {setTime > 0 && <Time>{setTime}</Time>}
+            </Text>
+            {setTime > 0 && timer === null && (
+              <View style={{flexDirection: 'row', marginLeft: 16}}>
+                <Button onPress={() => handleTimer(setTime)}>
+                  <Icon name="repeat" />
+                </Button>
+                <View style={{width: 16}} />
+                <Button onPress={() => handleTimer(Math.round(setTime / 2))}>
+                  Nastav polovinu
+                </Button>
+              </View>
+            )}
+          </View>
           <Text style={{fontSize: 100, textAlign: 'center'}}>
             <Time>{timer}</Time>
           </Text>
