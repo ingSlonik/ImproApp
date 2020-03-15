@@ -29,7 +29,9 @@ export default function Generator() {
   return (
     <Content>
       <View style={{flexDirection: 'row', alignItems: 'center'}}>
-        <H1>Generátor slov</H1>
+        <View style={{flexGrow: 10}}>
+          <H1>Generátor slov</H1>
+        </View>
         <Button
           onPress={() => {
             setAdjective(getRandomAdjective());

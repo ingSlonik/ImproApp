@@ -32,7 +32,7 @@ export function Content({children}: {children: Node}): Node {
 
 export function H1({children}: {children: Node}): Node {
   return (
-    <View style={{flexGrow: 10}}>
+    <View>
       <Text style={{fontSize: 30, fontWeight: 'bold', color: primaryText}}>
         {children}
       </Text>
