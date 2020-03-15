@@ -12,6 +12,8 @@ export default function Categories() {
   const webView = useRef(null);
   const [loading, setLoading] = useState(true);
 
+  const isWebView = webView.current !== null;
+
   useEffect(() => {
     function backAction() {
       if (webView.current) {
@@ -22,10 +24,12 @@ export default function Categories() {
       }
     }
 
-    BackHandler.addEventListener("hardwareBackPress", backAction);
+    BackHandler.addEventListener('hardwareBackPress', backAction);
 
-    return () => BackHandler.removeEventListener("hardwareBackPress", backAction);
-  }, [ webView.current ]);
+    return () => {
+      BackHandler.removeEventListener('hardwareBackPress', backAction);
+    };
+  }, [isWebView]);
 
   return (
     <View style={{flexGrow: 1, justifyContent: 'center'}}>
