@@ -3,16 +3,30 @@
  * @flow
  */
 
-import React, {useState, useRef} from 'react';
-import {ActivityIndicator, View} from 'react-native';
+import React, {useState, useEffect, useRef} from 'react';
+import {ActivityIndicator, View, BackHandler} from 'react-native';
 
 import {WebView} from 'react-native-webview';
-
-import {Fab} from '../components/Elements';
 
 export default function Categories() {
   const webView = useRef(null);
   const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    function backAction() {
+      if (webView.current) {
+        webView.current.goBack();
+        return true;
+      } else {
+        return false;
+      }
+    }
+
+    BackHandler.addEventListener("hardwareBackPress", backAction);
+
+    return () => BackHandler.removeEventListener("hardwareBackPress", backAction);
+  }, [ webView.current ]);
+
   return (
     <View style={{flexGrow: 1, justifyContent: 'center'}}>
       {loading && (
@@ -35,10 +49,6 @@ export default function Categories() {
         style={{flexGrow: 1, position: 'relative', zIndex: 1}}
         onLoadStart={() => setLoading(true)}
         onLoadEnd={() => setLoading(false)}
-      />
-      <Fab
-        icon="arrow-left"
-        onPress={() => webView.current && webView.current.goBack()}
       />
     </View>
   );
