@@ -28,7 +28,18 @@ export default function Generator() {
 
   return (
     <Content>
-      <H1>Generátor slov</H1>
+      <View style={{flexDirection: 'row', alignItems: 'center'}}>
+        <H1>Generátor slov</H1>
+        <Button
+          onPress={() => {
+            setAdjective(getRandomAdjective());
+            setNoun(getRandomNoun());
+            setPlace(getRandomPlace());
+            setGenre(getRandomGenre());
+          }}>
+          Vše
+        </Button>
+      </View>
       <View style={{flexGrow: 1, justifyContent: 'space-around'}}>
         <View>
           <H2>
