@@ -21,6 +21,8 @@ import {
   playRefereeWhistle,
 } from '../services/sound';
 
+import KeepAwake from 'react-native-keep-awake';
+
 import {Content, H1, Button, Modal} from '../components/Elements';
 
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -133,6 +135,7 @@ export default function Timer() {
               <Button onPress={() => setTimer(null)}>
                 <Icon name={'stop'} />
               </Button>
+              <KeepAwake />
             </View>
           )}
         </View>
