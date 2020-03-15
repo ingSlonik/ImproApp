@@ -11,7 +11,9 @@ import {
   TouchableNativeFeedback,
 } from 'react-native';
 
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import Icon, {
+  type MaterialCommunityIconsGlyphs,
+} from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import {
   primary,
@@ -28,7 +30,7 @@ export function Content({children}: {children: Node}): Node {
   );
 }
 
-export function H1({children}: {children: string}): Node {
+export function H1({children}: {children: Node}): Node {
   return (
     <View>
       <Text style={{fontSize: 30, fontWeight: 'bold', color: primaryText}}>
@@ -38,7 +40,7 @@ export function H1({children}: {children: string}): Node {
   );
 }
 
-export function H2({children}: {children: string}): Node {
+export function H2({children}: {children: Node}): Node {
   return (
     <View>
       <Text style={{fontSize: 25, color: primaryText}}>{children}</Text>
@@ -77,7 +79,12 @@ export function Button({
   );
 }
 
-export function Fab({icon, onPress}: {icon: string, onPress: () => void}) {
+type FabProps = {
+  icon: MaterialCommunityIconsGlyphs,
+  onPress: () => void,
+};
+
+export function Fab({icon, onPress}: FabProps) {
   return (
     <TouchableNativeFeedback onPress={onPress}>
       <View
