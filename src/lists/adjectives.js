@@ -7,7 +7,7 @@
 
 export default [
   'absolutní', //absolute
-  'adept', //adept
+  // 'adept', //adept
   'agilní', //agile
   'agonizující', //agonizing
   'agresivní', //aggressive
@@ -20,24 +20,24 @@ export default [
   'ambiciózní', //ambitious
   'andělský', //angelic
   'animovaný', //animated
-  'apt', //apt
-  'arid', //arid
+  // 'apt', //apt
+  // 'arid', //arid
   'arktický', //arctic
   'aromatický', //aromatic
   'atletický', //athletic
   'autentický', //authentic
   'automatický', //automatic
   'autorizovaný', //authorized
-  'Báječné', //wonderful
-  'báječný', //fabulous
+  // 'Báječné', //wonderful
+  // 'báječný', //fabulous
   'báječný', //yummy
   'barvitý', //colorful
-  'bdělý', //vigilant
+  // 'bdělý', //vigilant
   'bdělý', //watchful
-  'beton', //concrete
-  'bez hnutí', //motionless
-  'bez podšívky', //unlined
-  'bezbarvé', //threadbare
+  // 'beton', //concrete
+  // 'bez hnutí', //motionless
+  // 'bez podšívky', //unlined
+  // 'bezbarvé', //threadbare
   'bezbarvý', //colorless
   'bezbranný', //defenseless
   'bezcenný', //worthless
@@ -52,117 +52,117 @@ export default [
   'bezradné', //clueless
   'bezstarostný', //carefree
   'bezvadný', //immaculate
-  'bezvýznamný', //inconsequential
+  // 'bezvýznamný', //inconsequential
   'bezvýznamný', //trifling
   'běžný', //common
   'bídný', //miserable
   'bílý', //white
   'biologicky rozložitelné', //biodegradable
-  'bizarní', //outlandish
+  // 'bizarní', //outlandish
   'bláhový', //foolish
-  'bland', //bland
-  'blaring', //blaring
+  // 'bland', //bland
+  // 'blaring', //blaring
   'bláznivý', //zany
   'blažený', //blissful
   'bledý', //pale
   'blikající', //flickering
-  'blond', //blond
-  'bobtnání', //sweltering
-  'bohatý', //bountiful
-  'bohatý', //lavish
-  'bohatý', //profuse
-  'bohatý', //rich
+  // 'blond', //blond
+  // 'bobtnání', //sweltering
+  // 'bohatý', //bountiful
+  // 'bohatý', //lavish
+  // 'bohatý', //profuse
+  // 'bohatý', //rich
   'bohatý', //wealthy
   'bojovný', //warlike
-  'bolest', //sore
-  'bolesti', //aching
+  // 'bolest', //sore
+  // 'bolesti', //aching
   'bolestný', //hurtful
   'bouřlivý', //stormy
   'brilantní', //brilliant
-  'bronz', //bronze
+  // 'bronz', //bronze
   'bručení', //fumbling
   'brzy', //early
-  'bzučení', //buzzing
-  'bzučení', //humming
-  'cavernous', //cavernous
+  // 'bzučení', //buzzing
+  // 'bzučení', //humming
+  // 'cavernous', //cavernous
   'celkový', //total
   'celý', //entire
-  'Celý', //whole
-  'cena', //prize
+  // 'Celý', //whole
+  // 'cena', //prize
   'ceněný', //treasured
   'cenný', //valuable
-  'cikcak', //zigzag
+  // 'cikcak', //zigzag
   'cizí', //extraneous
-  'ctěn', //honored
+  // 'ctěn', //honored
   'ctihodný', //honorable
   'ctnostný', //virtuous
-  'čas', //tense
+  // 'čas', //tense
   'časté', //frequent
   'částečný', //partial
-  'Černá', //black
-  'Černý a bílý', //black-and-white
+  // 'Černá', //black
+  // 'Černý a bílý', //black-and-white
   'čerstvý', //fresh
   'červenající se', //blushing
-  'Červené', //red
+  // 'Červené', //red
   'čilý', //spry
-  'čistý', //clean
+  // 'čistý', //clean
   'čistý', //pure
   'čtvrtletní', //quarterly
-  'daleko', //far
-  'daleko', //faraway
-  'daleko', //far-flung
-  'daleko', //far-off
+  // 'daleko', //far
+  // 'daleko', //faraway
+  // 'daleko', //far-flung
+  // 'daleko', //far-off
   'dálkový', //remote
-  'další', //another
+  // 'další', //another
   'další', //next
-  'darebák', //glum
+  // 'darebák', //glum
   'darebný', //villainous
-  'dávání', //giving
+  // 'dávání', //giving
   'definitivní', //definitive
   'deliriózní', //delirious
   'desetinný', //decimal
-  'děsivé', //scary
+  // 'děsivé', //scary
   'děsivý', //frightening
   'detailní', //detailed
   'dětinský', //babyish
   'digitální', //digital
-  'Divoké', //feisty
+  // 'Divoké', //feisty
   'divoký', //wild
-  'dlouho', //long
+  // 'dlouho', //long
   'dlouhodobý', //long-term
   'dobrodružný', //adventurous
   'dobrosrdečný', //kindhearted
   'dobrotivý', //good-natured
   'dobrý', //good
-  'dobře', //well-off
-  'dobře informován', //well-informed
-  'dobře opotřebované', //well-worn
-  'dobře osvětlené', //well-lit
-  'dobře provedené', //well-made
-  'dobře upravené', //well-groomed
-  'dobře zdokumentované', //well-documented
-  'dobře-to-dělat', //well-to-do
-  'dokonalý', //accomplished
+  // 'dobře', //well-off
+  'informováný', //well-informed
+  'opotřebované', //well-worn
+  'osvětlené', //well-lit
+  'provedené', //well-made
+  'upravené', //well-groomed
+  'zdokumentované', //well-documented
+  //'dobře-to-dělat', //well-to-do
+  // 'dokonalý', //accomplished
   'dokonalý', //impeccable
-  'dokonce', //even
-  'dokončeno', //finished
+  // 'dokonce', //even
+  // 'dokončeno', //finished
   'domácký', //homely
   'donkichotský', //quixotic
-  'dortík', //tart
+  // 'dortík', //tart
   'dospělý', //grown
-  'dostatek', //ample
-  'dosti', //pretty
-  'doting', //doting
-  'drahé', //pricey
-  'drahocenný', //precious
+  // 'dostatek', //ample
+  // 'dosti', //pretty
+  // 'doting', //doting
+  // 'drahé', //pricey
+  // 'drahocenný', //precious
   'drahocenný', //precious
   'drahý', //expensive
   'dramatický', //dramatic
   'dráždivý', //irritating
   'drobný', //tiny
-  'drogy', //dopey
-  'droopy', //droopy
-  'drsný', //harsh
+  // 'drogy', //dopey
+  // 'droopy', //droopy
+  // 'drsný', //harsh
   'drsný', //raw
   'druh', //kind
   'druhý', //second
@@ -170,52 +170,52 @@ export default [
   'drzý', //wiry
   'dřevěný', //wooden
   'důkladný', //thorough
-  'Důležité', //important
+  // 'Důležité', //important
   'dutý', //hollow
   'důvěryhodný', //trustworthy
-  'důvěřovat', //trusting
-  'dvojče', //twin
+  // 'důvěřovat', //trusting
+  // 'dvojče', //twin
   'dvojí', //dual
-  'dvojnásobek', //double
+  // 'dvojnásobek', //double
   'dychtivý', //eager
   'elastický', //elastic
-  'elegantní', //dapper
-  'elegantní', //elegant
-  'elegantní', //graceful
-  'elegantní', //neat
+  // 'elegantní', //dapper
+  // 'elegantní', //elegant
+  // 'elegantní', //graceful
+  // 'elegantní', //neat
   'elegantní', //snappy
   'elektrický', //electric
   'eliptický', //elliptical
   'emocionální', //emotional
-  'energický', //energetic
-  'energický', //perky
+  // 'energický', //energetic
+  // 'energický', //perky
   'energický', //vigorous
   'etický', //ethical
   'euforický', //euphoric
-  'evergreen', //evergreen
+  // 'evergreen', //evergreen
   'exotický', //exotic
-  'expert', //expert
+  // 'expert', //expert
   'extatický', //ecstatic
   'extra malý', //extra-small
   'extra velké', //extra-large
-  'extrovertem', //extroverted
-  'falešný', //bogus
-  'falešný', //fake
+  // 'extrovertem', //extroverted
+  // 'falešný', //bogus
+  // 'falešný', //fake
   'falešný', //phony
   'fantastický', //fantastic
   'fatální', //fatal
   'fialový', //violet
-  'firma', //firm
-  'fond', //fond
+  // 'firma', //firm
+  // 'fond', //fond
   'formální', //formal
-  'francouzština', //French
+  // 'francouzština', //French
   'frigidní', //frigid
   'funkční', //functional
-  'fuzzy', //fuzzy
+  // 'fuzzy', //fuzzy
   'fyzický', //physical
   'gargantuovský', //gargantuan
   'gigantický', //gigantic
-  'grand', //grand
+  // 'grand', //grand
   'grandiózní', //grandiose
   'groteskní', //grotesque
   'gumové', //rubbery
@@ -230,12 +230,12 @@ export default [
   'hladký', //smooth
   'hladový', //hungry
   'hlasitý', //loud
-  'hlavní', //chief
+  // 'hlavní', //chief
   'hlavní', //primary
-  'hlavní město', //capital
-  'hlavní, důležitý', //major
-  'hloupě', //foolhardy
-  'hloupý', //silly
+  // 'hlavní město', //capital
+  'důležitý', //major
+  // 'hloupě', //foolhardy
+  // 'hloupý', //silly
   'hloupý', //stupid
   'hluboký', //deep
   'bezpečný', //safe
@@ -258,22 +258,22 @@ export default [
   'hrbolatý', //bumpy
   'blízký', //near, close
   'hrdý', //proud
-  'hrob', //grave
+  // 'hrob', //grave
   'hromový', //thunderous
   'hrozivý', //menacing
-  'hrozné', //dreary
-  'hrozné', //dreary
+  // 'hrozné', //dreary
+  // 'hrozné', //dreary
   'bohatý', //rich
-  'hrozný', //horrible
+  // 'hrozný', //horrible
   'hrozný', //terrible
-  'Hrubý', //coarse
-  'Hrubý', //gross
-  'hrubý', //rough
+  // 'Hrubý', //coarse
+  // 'Hrubý', //gross
+  // 'hrubý', //rough
   'hrubý', //rude
   'hrudkovitý', //lumpy
   'hříšný', //sinful
   'budoucí', //future
-  'humongous', //humongous
+  // 'humongous', //humongous
   'hustý', //dense
   'hvězdnatý', //starry
   'chabý', //faint
@@ -281,21 +281,21 @@ export default [
   'chaotický', //messy
   'charakteristický', //specific
   'chatrný', //shoddy
-  'chladně', //chilly
+  // 'chladně', //chilly
   'chladný', //cool
   'chlupatý', //hairy
-  'chmurně', //grim
-  'chraplavý', //husky
+  // 'chmurně', //grim
+  // 'chraplavý', //husky
   'chraptivý', //hoarse
   'chromý', //lame
   'chudý', //poor
   'časný', //early
   'chutný', //palatable
-  'Chutný', //tasty
+  // 'Chutný', //tasty
   'chybné', //flawed
-  'chytrý', //clever
+  // 'chytrý', //clever
   'chytrý', //smart
-  'icky', //icky
+  // 'icky', //icky
   'čestný', //honest
   'idealistický', //idealistic
   'činný', //active
@@ -311,45 +311,45 @@ export default [
   'inteligentní', //intelligent
   'ironclad', //ironclad
   'ironický', //wry
-  'jam-packed', //jam-packed
+  // 'jam-packed', //jam-packed
   'jásavý', //jubilant
-  'jasně', //downright
-  'jasně', //downright
-  'Jasný', //bright
+  // 'jasně', //downright
+  // 'jasně', //downright
+  // 'Jasný', //bright
   'jasný', //clear-cut
   'jedlý', //edible
   'jednoduchý', //simple
   'jednotný', //uniform
   'jednotvárný', //drab
-  'divoký, planý', //wild
+  'divoký', //wild
   'jemný', //gentle
   'jiný', //other
   'dlouhý', //long
-  'jisté nohy', //sure-footed
-  'jumbo', //jumbo
+  // 'jisté nohy', //sure-footed
+  // 'jumbo', //jumbo
   'juniorský', //junior
   'dobrý', //good
   'kajícný', //remorseful
   'kaleidoskopický', //kaleidoscopic
-  'kapalina', //liquid
+  // 'kapalina', //liquid
   'katastrofální', //disastrous
-  'každý', //each
-  'každý', //every
+  // 'každý', //each
+  // 'každý', //every
   'klasický', //classic
-  'klíč', //key
-  'klid', //quiet
+  // 'klíč', //key
+  // 'klid', //quiet
   'klidný', //peaceful
   'dokonalý', //perfect
-  'kloub', //joint
-  'klutzy', //klutzy
+  // 'kloub', //joint
+  // 'klutzy', //klutzy
   'kluzký', //slippery
-  'Kočkovitý', //feline
-  'kolo', //round
+  'kočkovitý', //feline
+  // 'kolo', //round
   'dospělý', //adult
   'komfortní', //comfortable
   'kompetentní', //competent
   'kompletní', //complete
-  'komplex', //complex
+  // 'komplex', //complex
   'konečný', //ultimate
   'konstantní', //constant
   'drahý', //dear, expensive
@@ -357,14 +357,14 @@ export default [
   'kostnatý', //bony
   'košer', //kosher
   'kovový', //metallic
-  'královský', //regal
+  // 'královský', //regal
   'královský', //royal
   'Krásná', //beautiful
   'drsný', //rough
   'krátký', //short
   'krémová', //creamy
   'kritické', //critical
-  'krotit', //tame
+  // 'krotit', //tame
   'kroucený', //wiggly
   'krutý', //cruel
   'důležitý', //important
@@ -372,56 +372,56 @@ export default [
   'křehký', //squiggly
   'křivý', //crooked
   'dvojitý', //double
-  'který', //which
-  'kudrnatý', //curly
+  // 'který', //which
+  // 'kudrnatý', //curly
   'kudrnatý', //frizzy
   'kulaťoučký', //chubby
-  'kulhat', //limp
-  'kultivovaný', //cultivated
+  // 'kulhat', //limp
+  // 'kultivovaný', //cultivated
   'kultivovaný', //cultured
-  'kůň', //kooky
+  // 'kůň', //kooky
   'kuriózní', //quaint
   'kvalifikovaný', //qualified
   'květinový', //flowery
-  'kyselé', //acidic
+  // 'kyselé', //acidic
   'kyselý', //sour
-  'Lahodné', //delicious
+  'lahodné', //delicious
   'lákavý', //tempting
-  'lakomý', //miserly
+  // 'lakomý', //miserly
   'lakomý', //stingy
-  'laskavě', //kindly
+  // 'laskavě', //kindly
   'láskyplný', //affectionate
   'ledový', //icy
   'legitimní', //legitimate
   'falešný', //false
   'lékařský', //medical
-  'lemováno', //lined
+  // 'lemováno', //lined
   'lepkavý', //sticky
   'lepší', //better
-  'lesklý', //glossy
-  'lesklý', //lustrous
+  // 'lesklý', //glossy
+  // 'lesklý', //lustrous
   'lesklý', //shiny
   'lesknoucí se', //glistening
   'leštěné', //polished
   'letitý', //aged
   'levný', //cheap
   'ležérní', //easy-going
-  'limping', //limping
+  // 'limping', //limping
   'lineární', //linear
-  'líný', //idle
+  // 'líný', //idle
   'líný', //lazy
   'listnaté', //leafy
-  'livid', //livid
+  // 'livid', //livid
   'loajální', //loyal
   'lstivý', //crafty
   'hladký', //smooth
   'majestátní', //majestic
   'hladový', //hungry
-  'málo', //few
+  // 'málo', //few
   'hlasitý', //loud
   'malý', //petty
   'hlavní', //main
-  'mamut', //mammoth
+  // 'mamut', //mammoth
   'marný', //vain
   'masitý', //meaty
   'masivní', //massive
@@ -445,18 +445,18 @@ export default [
   'miniaturní', //miniature
   'hořký', //bitter
   'minulost', //past
-  'mírné', //mild
+  // 'mírné', //mild
   'mírné', //slight
   'hranatý', //square
-  'mladistvý', //juvenile
+  // 'mladistvý', //juvenile
   'mladistvý', //youthful
   'mladý', //young
   'mléčný', //milky
   'moderní', //modern
   'modrý', //blue
-  'mokré', //wet
+  // 'mokré', //wet
   'mokrý', //soggy
-  'monstrózní', //monstrous
+  // 'monstrózní', //monstrous
   'monstrózní', //whopping
   'hrozný', //terrible, horrible
   'monumentální', //monumental
@@ -464,27 +464,27 @@ export default [
   'hrubý', //rude
   'moudrý', //wise
   'možný', //possible
-  'mrazivý', //frosty
+  // 'mrazivý', //frosty
   'mrazivý', //nippy
   'mrtví', //dead
-  'mrzutý', //bleak
+  // 'mrzutý', //bleak
   'mrzutý', //grouchy
-  'mužský', //male
+  // 'mužský', //male
   'mužský', //masculine
-  'nabídka', //tender
+  // 'nabídka', //tender
   'nabíraný', //frilly
   'načechraný', //fluffy
   'chladný', //cool
   'nadějný', //hopeful
-  'nádherné', //delightful
+  // 'nádherné', //delightful
   'nádherné', //marvelous
-  'nádherný', //gorgeous
+  // 'nádherný', //gorgeous
   'nádherný', //splendid
-  'chudý, ubohý', //poor
+  'chudý', //poor
   'nadřízený', //superior
   'náhlý', //sudden
   'chutný', //tasty
-  'naivní', //gullible
+  // 'naivní', //gullible
   'naivní', //naive
   'chytrý', //clever
   'náladový', //whimsical
@@ -495,10 +495,10 @@ export default [
   'naprostý', //utter
   'náročný', //demanding
   'násilný', //violent
-  'náš', //our
+  // 'náš', //our
   'naštvaný', //upset
-  'navíjení', //winding
-  'naživu', //alive
+  // 'navíjení', //winding
+  // 'naživu', //alive
   'inteligentní', //intelligent
   'nebeský', //heavenly
   'nebezpečný', //dangerous
@@ -506,10 +506,10 @@ export default [
   'necitlivé', //numb
   'nečestný', //dishonest
   'nečistý', //impure
-  'nedávno', //recent
-  'jasný, zářivý', //bright
-  'jasný, zřejmý', //clear
-  'jediný, svobodný', //single
+  // 'nedávno', //recent
+  'zářivý', //bright
+  'zřejmý', //clear
+  'svobodný', //single
   'nedotčené', //pristine
   'nedůležité', //unimportant
   'jednoduchý', //simple
@@ -519,14 +519,14 @@ export default [
   'jemný', //fine
   'nějaký', //some
   'nejdražší', //dearest
-  'jistý, určitý', //sure, certain
+  'jistý', //sure, certain
   'nejistý', //insecure
   'nejlepší', //best
-  'několik', //several
+  // 'několik', //several
   'nekompatibilní', //incompatible
   'nekonečný', //infinite
   'neloajální', //disloyal
-  'nemocný', //ill
+  // 'nemocný', //ill
   'nemocný', //sick
   'nemotorný', //clumsy
   'nemovitý', //real
@@ -543,29 +543,29 @@ export default [
   'nepořádný', //unkempt
   'neposkvrněný', //spotless
   'nepoužitý', //unused
-  'nepraktický', //impractical
+  // 'nepraktický', //impractical
   'nepraktický', //unwieldy
   'nepravděpodobný', //improbable
-  'Nepravdivé', //false
+  'nepravdivé', //false
   'kouzelný', //magic
   'nepřekonatelný', //unequaled
-  'nepřetržitě', //nonstop
+  // 'nepřetržitě', //nonstop
   'nepřijatelný', //unacceptable
   'nepříjemné', //awkward
-  'krásný', //beautiful, pretty
+  // 'krásný', //beautiful, pretty
   'nepříjemný', //unpleasant
   'nepřirozený', //unnatural
   'krátký', //short
   'nerealistické', //unrealistic
   'nerovný', //uneven
-  'krotký, ochočený', //tame
-  'nervózní', //jittery
+  'ochočený', //tame
+  // 'nervózní', //jittery
   'nervózní', //jumpy
   'krutý', //cruel
   'nesmazatelný', //indelible
   'nesobecký', //unselfish
   'nesouvislé', //lopsided
-  'nesprávně', //misguided
+  // 'nesprávně', //misguided
   'křivý', //crooked
   'nestabilní', //unsteady
   'nestálý', //fickle
@@ -573,9 +573,9 @@ export default [
   'nestydatý', //shameless
   'neškodný', //harmless
   'kulatý', //round
-  'nešťastný', //unfortunate
-  'nešťastný', //unhappy
-  'nešťastný', //unlucky
+  // 'nešťastný', //unfortunate
+  // 'nešťastný', //unhappy
+  // 'nešťastný', //unlucky
   'nešťastný', //untidy
   'neúplný', //incomplete
   'neuvěřitelný', //incredible
@@ -604,41 +604,41 @@ export default [
   'nóbl', //posh
   'noční', //nocturnal
   'normální', //normal
-  'Nový', //new
-  'nudný', //boring
+  'nový', //new
+  // 'nudný', //boring
   'nudný', //dull
   'levný', //cheap
   'levý', //left
   'obarvené', //stained
   'obavný', //apprehensive
-  'obdélník', //oblong
+  // 'obdélník', //oblong
   'líný', //lazy
   'obdélníkový', //rectangular
   'obdivovaný', //admired
   'obdivuhodný', //admirable
   'obézní', //obese
-  'oběžník', //circular
+  // 'oběžník', //circular
   'objemný', //bulky
   'maličký', //tiny
-  'oblačno', //cloudy
-  'oblíbený', //favorite
+  // 'oblačno', //cloudy
+  // 'oblíbený', //favorite
   'oblíbený', //popular
   'malý', //small, little
-  'obrovský', //enormous
-  'obrovský', //huge
-  'obrovský', //immense
-  'obrovský', //tremendous
-  'obrovský', //tremendous
+  // 'obrovský', //enormous
+  // 'obrovský', //huge
+  // 'obrovský', //immense
+  // 'obrovský', //tremendous
+  // 'obrovský', //tremendous
   'obrovský', //vast
   'obří', //giant
   'měkký', //soft
   'obtížné', //tricky
   'mělký', //shallow
   'obyčejný', //ordinary
-  'ocel', //steel
+  // 'ocel', //steel
   'odcizený', //alienated
   'oddaný', //devoted
-  'oddball', //oddball
+  // 'oddball', //oddball
   'oddělený', //discrete
   'odhodlaný', //determined
   'odchozí', //outgoing
@@ -646,15 +646,15 @@ export default [
   'odlišný', //different
   'milý', //nice
   'odměňování', //rewarding
-  'odporný', //loathsome
+  // 'odporný', //loathsome
   'odporný', //repulsive
   'minulý', //past
   'odpovídající', //appropriate
   'mírný', //mild, gentle
   'oduševnělý', //soulful
-  'odvážný', //courageous
+  // 'odvážný', //courageous
   'odvážný', //daring
-  'offbeat', //offbeat
+  // 'offbeat', //offbeat
   'mladý', //young
   'ohleduplný', //considerate
   'moderní', //modern
@@ -662,19 +662,19 @@ export default [
   'ohromující', //stunning
   'mokrý', //wet
   'ochotný', //willing
-  'okázalý', //flamboyant
+  // 'okázalý', //flamboyant
   'okázalý', //spectacular
-  'okouzlený', //bewitched
+  // 'okouzlený', //bewitched
   'okouzlený', //enchanted
-  'okouzlující', //charming
-  'okouzlující', //enchanting
+  // 'okouzlující', //charming
+  // 'okouzlující', //enchanting
   'okouzlující', //glamorous
   'možný', //possible
   'omezený', //limited
   'opálení', //tan
   'opatrně', //careful
   'mrtvý', //dead
-  'opatrný', //prudent
+  // 'opatrný', //prudent
   'opatrný', //wary
   'opečený', //roasted
   'mužský', //male
@@ -693,18 +693,18 @@ export default [
   'originální', //genuine
   'ornery', //ornery
   'ořechový', //nutty
-  'osamělý', //lone
+  // 'osamělý', //lone
   'osamělý', //lonely
-  'oslnivý', //dazzling
+  // 'oslnivý', //dazzling
   'oslnivý', //flashy
   'oslňující', //glaring
   'osobní', //personal
   'ospalý', //sleepy
-  'ostré', //brisk
+  // 'ostré', //brisk
   'ostrý', //sharp
   'osvícený', //enlightened
   'nebezpečný', //dangerous
-  'otáčení', //revolving
+  // 'otáčení', //revolving
   'otáčení', //rotating
   'otcovský', //fatherly
   'otevřeno', //open
@@ -717,19 +717,19 @@ export default [
   'nedůležitý', //unimportant
   'paralelní', //parallel
   'parfémovaná', //perfumed
-  'pastel', //pastel
-  'péče', //caring
+  // 'pastel', //pastel
+  // 'péče', //caring
   'pěkný', //nice
   'peprný', //peppery
   'perfektní', //perfect
   'pesimistický', //pessimistic
-  'pevný', //fixed
+  // 'pevný', //fixed
   'pevný', //solid
   'pichlavý', //prickly
   'pikantní', //spicy
   'pilný', //diligent
   'písečné', //sandy
-  'pískat', //squeaky
+  // 'pískat', //squeaky
   'nemocný', //ill, sick
   'plachý', //shy
   'plastický', //plastic
@@ -739,13 +739,13 @@ export default [
   'plodný', //fruitful
   'ploché', //flat
   'neobyčejný', //extraordinary
-  'plyš', //plush
-  'plýtvání', //wasteful
+  // 'plyš', //plush
+  // 'plýtvání', //wasteful
   'pobavený', //amused
   'pobuřující', //outrageous
   'podezřelý', //suspicious
   'podhodnocené', //understated
-  'podivný', //strange
+  // 'podivný', //strange
   'podivný', //weird
   'podobný', //similar
   'podporující', //supportive
@@ -755,10 +755,10 @@ export default [
   'pohostinný', //hospitable
   'pohrdavý', //scornful
   'pokorný', //meek
-  'pokořit', //humble
+  // 'pokořit', //humble
   'pokročilý', //advanced
   'politický', //political
-  'polovina', //half
+  // 'polovina', //half
   'pomalý', //slow
   'pomstychtivý', //vengeful
   'ponížený', //mortified
@@ -766,41 +766,41 @@ export default [
   'ponurý', //gloomy
   'nervózní', //nervous
   'popisný', //descriptive
-  'nesmělý, stydlivý', //shy
-  'poslušný', //obedient
+  'stydlivý', //shy
+  // 'poslušný', //obedient
   'poslušný', //submissive
   'poškozené', //damaged
   'nesprávný', //wrong
-  'potěšen', //pleased
-  'pouze', //only
+  // 'potěšen', //pleased
+  // 'pouze', //only
   'použitelný', //usable
   'použitý', //used
   'povedený', //hilarious
-  'Povinný', //required
-  'povrchní', //frivolous
+  'povinný', //required
+  // 'povrchní', //frivolous
   'povrchní', //superficial
-  'pozdě', //late
+  // 'pozdě', //late
   'pozitivní', //positive
-  'poznamenal', //noted
+  // 'poznamenal', //noted
   'neurčitý', //indefinite
-  'pozoruhodný', //notable
-  'pozoruhodný', //noteworthy
+  // 'pozoruhodný', //notable
+  // 'pozoruhodný', //noteworthy
   'pozoruhodný', //remarkable
   'neviditelný', //invisible
-  'pravděpodobně', //likely
+  'pravděpodobný', //likely
   'nevinný', //innocent
   'pravdivý', //truthful
-  'pravidelně', //periodic
+  // 'pravidelně', //periodic
   'pravidelný', //regular
   'právní', //legal
-  'prázdný', //blank
+  // 'prázdný', //blank
   'prázdný', //empty
   'prestižní', //prestigious
   'primární', //prime
   'proměnná', //variable
   'pronikavý', //piercing
   'nezdvořilý', //impolite
-  'pronikavý', //shrill
+  // 'pronikavý', //shrill
   'pronikavý', //strident
   'propracovaný', //elaborate
   'neznámý', //unknown
@@ -812,14 +812,14 @@ export default [
   'pruhovaný', //striped
   'průměrný', //average
   'normální', //normal
-  'První', //first
+  'první', //first
   'nový', //new
-  'předčasně', //untimely
+  'předčasný', //untimely
   'nudný', //boring
   'předměstský', //suburban
-  'přední', //eminent
+  // 'přední', //eminent
   'přední', //front
-  'přehlíženo', //overlooked
+  'přehlížený', //overlooked
   'překvapený', //surprised
   'překvapující', //striking
   'přepečené', //overcooked
@@ -829,15 +829,15 @@ export default [
   'přesný', //punctual
   'přešťastný', //overjoyed
   'přijatelný', //acceptable
-  'příjemný', //agreeable
-  'příjemný', //pleasant
+  // 'příjemný', //agreeable
+  // 'příjemný', //pleasant
   'příjemný', //pleasing
   'oblíbený', //favourite, popular
   'příležitostně', //occasional
-  'Přímo', //direct
+  // 'Přímo', //direct
   'přímý', //forthright
   'připojený', //attached
-  'připraven', //ready
+  // 'připraven', //ready
   'připravený', //poised
   'přírodní', //natural
   'přísný', //strict
@@ -847,19 +847,19 @@ export default [
   'obvyklý', //usual
   'obyčejný', //ordinary
   'psí', //canine
-  'puberťák', //adolescent
+  // 'puberťák', //adolescent
   'puntíkovaný', //spotted
-  'pushy', //pushy
+  // 'pushy', //pushy
   'půvabný', //lovely
-  'radostný', //cheery
+  // 'radostný', //cheery
   'radostný', //joyous
   'odlišný', //different
   'relevantní', //pertinent
   'rezavý', //rusty
   'robustní', //robust
-  'roční', //annual
+  // 'roční', //annual
   'roční', //yearly
-  'román', //novel
+  // 'román', //novel
   'rostoucí', //growing
   'rovnat se', //equal
   'rovníkový', //equatorial
@@ -870,19 +870,19 @@ export default [
   'rozeklaný', //forked
   'ohromný', //huge, giant, enormous
   'rozjařený', //jolly
-  'rozkošný', //adorable
+  // 'rozkošný', //adorable
   'rozkošný', //adorable
   'rozmazané', //dimwitted
   'rozpustilý', //impish
   'rozradostněný', //joyful
   'rozrušený', //agitated
-  'roztomilý', //cute
+  // 'roztomilý', //cute
   'roztomilý', //lovable
   'roztrhané', //frayed
   'roztrhaný', //ragged
   'opačný', //opposite
   'rozumné', //reasonable
-  'rozumný', //judicious
+  // 'rozumný', //judicious
   'rozumný', //sane
   'rozviklaný', //wobbly
   'rozvinuté', //unfolded
@@ -891,22 +891,22 @@ export default [
   'rozzuřený', //enraged
   'ruční', //handmade
   'opravdový', //real
-  'Rundown', //rundown
-  'runny', //runny
+  // 'Rundown', //rundown
+  // 'runny', //runny
   'rušný', //bustling
-  'růžový', //pink
+  // 'růžový', //pink
   'růžový', //rosy
-  'rychle', //fast
-  'rychlé', //quick-witted
-  'rychlý', //quick
-  'rychlý', //rapid
-  'rychlý', //speedy
+  // 'rychle', //fast
+  // 'rychlé', //quick-witted
+  // 'rychlý', //quick
+  // 'rychlý', //rapid
+  // 'rychlý', //speedy
   'rychlý', //swift
   'řádně', //orderly
-  'řezivo', //lumbering
+  // 'řezivo', //lumbering
   'sametový', //velvety
   'samolibý', //smug
-  'samostatná', //self-reliant
+  // 'samostatná', //self-reliant
   'samostatný', //separate
   'ospalý', //sleepy
   'sarkastický', //sarcastic
@@ -916,35 +916,35 @@ export default [
   'sentimentální', //mushy
   'ošklivý', //ugly, awful
   'seriózní', //earnest
-  'serpentin', //serpentine
+  // 'serpentin', //serpentine
   'sférické', //spherical
-  'shadowy', //shadowy
+  // 'shadowy', //shadowy
   'otevřený', //open
-  'showy', //showy
+  // 'showy', //showy
   'schopný', //able
-  'silný', //forceful
-  'silný', //powerful
+  // 'silný', //forceful
+  // 'silný', //powerful
   'silný', //strong
-  'singl', //single
+  // 'singl', //single
   'sjednocený', //united
   'skákání', //bouncy
   'skeletální', //skeletal
-  'pečlivý, opatrný', //careful
-  'skromný', //frugal
+  'opatrný', //careful
+  // 'skromný', //frugal
   'skromný', //modest
-  'skryté', //disguised
-  'skryté', //hideous
+  // 'skryté', //disguised
+  // 'skryté', //hideous
   'skrytý', //hidden
   'skus', //bite-sized
   'pevný', //tight, solid
-  'skvělý', //awesome
+  // 'skvělý', //awesome
   'skvělý', //great
   'pilný', //hard-working
   'slabý', //weak
-  'sladký', //sugary
+  // 'sladký', //sugary
   'sladký', //sweet
-  'Slaný', //salty
-  'slaví', //celebrated
+  'slaný', //salty
+  // 'slaví', //celebrated
   'slavný', //famous
   'plný', //full
   'slepý', //blind
@@ -954,23 +954,23 @@ export default [
   'slunný', //sunny
   'slušný', //decent
   'smíšený', //mixed
-  'smoggy', //smoggy
+  // 'smoggy', //smoggy
   'smrtící', //deadly
-  'smutný', //sad
+  // 'smutný', //sad
   'smutný', //sorrowful
   'snadný', //easy
-  'podivný, cizí', //strange
-  'sniveling', //sniveling
-  'snoopy', //snoopy
+  'podivný', //strange
+  // 'sniveling', //sniveling
+  // 'snoopy', //snoopy
   'sobecký', //selfish
   'sofistikovaný', //sophisticated
   'pohledný', //handsome, good-looking
-  'somber', //somber
+  // 'somber', //somber
   'pohodlný', //comfortable
   'soucitný', //sympathetic
-  'současnost, dárek', //present
+  // 'současnost, dárek', //present
   'soukromé', //private
-  'soupy', //soupy
+  // 'soupy', //soupy
   'sousední', //neighboring
   'pokročilý', //advanced
   'spokojený', //satisfied
@@ -979,35 +979,35 @@ export default [
   'pomalý', //slow
   'sporný', //questionable
   'správně', //proper
-  'srdečné', //heartfelt
+  // 'srdečné', //heartfelt
   'srdečný', //warmhearted
   'stabilní', //stable
   'stádní', //gregarious
   'poslední', //last
-  'stark', //stark
+  // 'stark', //stark
   'staromódní', //old-fashioned
   'poškozený', //damaged
   'starožitné', //antique
   'starší', //elderly
   'starý', //old
   'statečný', //brave
-  'statný', //burly
+  // 'statný', //burly
   'statný', //hefty
   'stejný', //same
   'stimulující', //stimulating
   'stinné', //shady
   'strach', //afraid
   'pozdní', //late
-  'strach', //fearful
-  'strach', //scared
-  'strašidelný', //creepy
+  // 'strach', //fearful
+  // 'strach', //scared
+  // 'strašidelný', //creepy
   'strašidelný', //haunting
   'strmé', //steep
   'praktický', //practical
   'stručný', //brief
   'střední', //medium
   'pravděpodobný', //probable
-  'Studený', //cold
+  'studený', //cold
   'pravidelný', //regular
   'suchý', //dry
   'super', //super
@@ -1015,42 +1015,42 @@ export default [
   'prázdný', //empty
   'svědomitý', //dutiful
   'světelné', //luminous
-  'světlo', //light
-  'světský', //mundane
+  // 'světlo', //light
+  // 'světský', //mundane
   'světský', //worldly
   'syčící', //sizzling
   'sympatický', //likable
   'šedá', //gray
   'šetrný', //thrifty
-  'Šikovný', //handy
+  'šikovný', //handy
   'provinilý', //guilty
   'průběhový', //continuous
   'šílený', //mad
   'široký', //wide
-  'širokýma očima', //wide-eyed
+  // 'širokýma očima', //wide-eyed
   'škaredý', //ugly
-  'škodlivý', //harmful
+  // 'škodlivý', //harmful
   'škodlivý', //noxious
   'přátelský', //friendly
   'šokován', //shocked
   'šokující', //shocking
-  'španělština', //Spanish
-  'špatně', //sparse
-  'špatně', //wrong
-  'špatně informovaný', //ill-informed
-  'špatný', //bad
+  // 'španělština', //Spanish
+  // 'špatně', //sparse
+  // 'špatně', //wrong
+  // 'špatně informovaný', //ill-informed
+  // 'špatný', //bad
   'špatný', //nasty
   'špičatý', //pointed
-  'špinavý', //dirty
-  'špinavý', //filthy
+  // 'špinavý', //dirty
+  // 'špinavý', //filthy
   'špinavý', //grimy
   'přesný', //exact
   'šťastný', //lucky
-  'šťastný-go-šťastný', //happy-go-lucky
+  // 'šťastný-go-šťastný', //happy-go-lucky
   'šťavnatý', //juicy
   'štědrý', //generous
   'příjemný', //pleasant
-  'štíhlý', //slim
+  // 'štíhlý', //slim
   'štíhlý', //svelte
   'šumivé', //sparkling
   'šupinatý', //scaly
@@ -1058,9 +1058,9 @@ export default [
   'tajný', //secret
   'tázavý', //quizzical
   'připravený', //ready
-  'tekutina', //fluid
+  // 'tekutina', //fluid
   'přirozený', //natural
-  'temný', //dark
+  // 'temný', //dark
   'temný', //murky
   'temperamentní', //bubbly
   'přitažlivý', //attractive
@@ -1071,105 +1071,105 @@ export default [
   'těsný', //tight
   'testy', //testy
   'těžké', //severe
-  'pyšný, hrdý', //proud
-  'těžko k sehnání', //hard-to-find
+  'hrdý', //proud
+  // 'těžko k sehnání', //hard-to-find
   'těžkopádný', //cumbersome
   'těžký', //heavy
   'tichý', //silent
-  'tlumené', //muffled
+  // 'tlumené', //muffled
   'tlumené', //subdued
-  'Tlustý', //fat
+  // 'Tlustý', //fat
   'tlustý', //thick
   'tónovaný', //tinted
   'tragický', //tragic
   'rovný', //straight
-  'trim', //trim
+  // 'trim', //trim
   'rozbitý', //broken
   'tristní', //dismal
   'triviální', //trivial
   'trnitý', //thorny
   'trojúhelníkový', //triangular
   'trvalý', //lasting
-  'Třetí', //third
+  'třetí', //third
   'třpytivé', //glittering
   'třpytivý', //shimmering
-  'tubby', //tubby
-  'tučně', //bold
+  // 'tubby', //tubby
+  'tučný', //bold
   'rozrušený', //upset
   'tuhý', //stiff
   'roztomilý', //cute
   'tvořivý', //creative
   'tvrdý', //hard
-  'ty', //those
-  'týdně', //weekly
-  'tyto', //these
+  // 'ty', //those
+  // 'týdně', //weekly
+  // 'tyto', //these
   'rozvedený', //divorced
-  'ubohý', //paltry
+  // 'ubohý', //paltry
   'ubohý', //wretched
-  'uctíval', //venerated
+  // 'uctíval', //venerated
   'úctyhodný', //respectful
   'rozzlobený', //angry
-  'uchopení', //gripping
-  'uklidit', //tidy
-  'uklidnit', //calm
-  'uklonil se', //bowed
+  // 'uchopení', //gripping
+  // 'uklidit', //tidy
+  // 'uklidnit', //calm
+  // 'uklonil se', //bowed
   'ukotvená', //anchored
   'rušný', //busy
   'umělecký', //artistic
   'umouněný', //grubby
-  'úmysl', //intent
+  // 'úmysl', //intent
   'rychlý', //fast, quick
-  'unavený', //jaded
-  'unavený', //tired
+  // 'unavený', //jaded
+  // 'unavený', //tired
   'unavený', //weary
-  'únavné', //tedious
+  // 'únavné', //tedious
   'unikátní', //unique
   'uplakaný', //weepy
   'upozornění', //alert
-  'upřímný', //candid
-  'upřímný', //frank
+  // 'upřímný', //candid
+  // 'upřímný', //frank
   'upřímný', //honest
   'urážlivý', //offensive
   'určitý', //definite
-  'Urychlený', //hasty
+  'urychlený', //hasty
   'usedlý', //staid
-  'ustaraný', //troubled
+  // 'ustaraný', //troubled
   'ustaraný', //worried
   'utěšený', //delectable
-  'uzemněn', //grounded
-  'úzkost', //anxious
+  // 'uzemněn', //grounded
+  // 'úzkost', //anxious
   'úzkostlivý', //fussy
   'úzký', //narrow
-  'uzlu', //knotty
+  // 'uzlu', //knotty
   'silný', //thick, strong
-  'úžasné', //stupendous
-  'úžasný', //amazing
+  // 'úžasné', //stupendous
+  // 'úžasný', //amazing
   'úžasný', //terrific
-  'užitečné', //worthwhile
+  // 'užitečné', //worthwhile
   'užitečný', //useful
-  'v bezvědomí', //unconscious
-  'v pořádku', //fine
-  'v rozpacích', //embarrassed
+  // 'v bezvědomí', //unconscious
+  // 'v pořádku', //fine
+  // 'v rozpacích', //embarrassed
   'vágní', //vague
   'válcový', //cylindrical
-  'vapid', //vapid
+  // 'vapid', //vapid
   'vařené', //cooked
   'vařící', //boiling
   'vášnivý', //impassioned
   'slabý', //weak
   'vážený', //esteemed
   'sladký', //sweet
-  'včas', //timely
+  // 'včas', //timely
   'slaný', //salty
   'vděčný', //thankful
   'věčný', //everlasting
   'vědecké', //scholarly
   'slepý', //blind
-  'vědět', //knowing
-  'vědomě', //aware
+  // 'vědět', //knowing
+  // 'vědomě', //aware
   'vědomí', //conscious
   'složitý', //complicated
-  'veletrh', //fair
+  // 'veletrh', //fair
   'velkolepý', //big-hearted
   'slušný', //decent
   'směšný', //ridiculous
@@ -1177,16 +1177,16 @@ export default [
   'venkovský', //rural
   'věrný', //trusty
   'smutný', //sad
-  'veselý', //cheerful
-  'veselý', //gleeful
+  // 'veselý', //cheerful
+  // 'veselý', //gleeful
   'snadný', //easy
-  'veselý', //lighthearted
+  // 'veselý', //lighthearted
   'veselý', //merry
   'větrný', //windy
   'vibrující', //vibrant
   'vícebarevný', //multicolored
   'viditelné', //visible
-  'vichřice', //whirlwind
+  // 'vichřice', //whirlwind
   'vinný', //guilty
   'virtuální', //virtual
   'vitální', //vital
@@ -1194,24 +1194,24 @@ export default [
   'vítězný', //victorious
   'vlažný', //tepid
   'spící', //asleep
-  'vlhký', //damp
+  // 'vlhký', //damp
   'vlhký', //moist
   'vlnitý', //wavy
   'společný', //common
   'vnímavý', //impressionable
   'vnitřní', //internal
-  'vodě', //waterlogged
+  // 'vodě', //waterlogged
   'spravedlivý', //fair
   'volný', //loose
-  'správný, pravý', //right
-  'volný, uvolnit', //free
+  'pravý', //right
+  'uvolněný', //free
   'vonný', //fragrant
-  'vrčení', //growling
+  // 'vrčení', //growling
   'vrozený', //inborn
-  'Všechno', //all  Nejpoužívanější přídavná j
-  'Všeobecné', //general
+  // 'Všechno', //all  Nejpoužívanější přídavná j
+  // 'Všeobecné', //general
   'staromódní', //old-fashioned
-  'vůně', //scented
+  // 'vůně', //scented
   'starověký', //ancient
   'vydatný', //hearty
   'vydutý', //baggy
@@ -1219,39 +1219,39 @@ export default [
   'starý', //old
   'vynikající', //excellent
   'statečný', //brave
-  'vypnuto', //muted
-  'výpočet', //calculating  Nejpoužívanější přídavná j
+  // 'vypnuto', //muted
+  // 'výpočet', //calculating  Nejpoužívanější přídavná j
   'stejný', //same
-  'vyrážka', //rash
+  // 'vyrážka', //rash
   'výrobní', //productive
-  'vysoká úroveň', //high-level
-  'vysoký', //high
+  // 'vysoká úroveň', //high-level
+  // 'vysoký', //high
   'vysoký', //tall
-  'vystavený průvanu', //drafty
+  // 'vystavený průvanu', //drafty
   'vystrašený', //frightened
   'vyškolení', //trained
   'vyšperkovaný', //ornate
   'střízlivý', //sober
-  'využíváno', //utilized
+  // 'využíváno', //utilized
   'studený', //cold
   'výživný', //nutritious
   'vzácný', //rare
   'suchý', //dry
-  'vzdálený', //distant
-  'vzdálený', //distant
+  // 'vzdálený', //distant
+  // 'vzdálený', //distant
   'vzdělaný', //educated  Nejpoužívanější přídavná j
   'vzdorný', //defiant
   'vzpřímený', //upright
   'vzrušený', //elated
   'světlovlasý', //fair, blond
   'světlý', //light
-  'vzrušující', //excitable
+  // 'vzrušující', //excitable
   'vzrušující', //exciting
-  'svěží, čerstvý', //fresh
-  'webbed', //webbed
-  'wee', //wee
-  'Woozy', //woozy
-  'writhing', //writhing
+  'čerstvý', //fresh
+  // 'webbed', //webbed
+  // 'wee', //wee
+  // 'Woozy', //woozy
+  // 'writhing', //writhing
   'z druhé ruky', //second-hand
   'z první ruky', //firsthand
   'zábavný', //amusing
@@ -1259,15 +1259,15 @@ export default [
   'široký', //wide
   'záhadný', //puzzling
   'zahanbený', //ashamed
-  'zájem', //keen
+  // 'zájem', //keen
   'zajímavý', //interesting
   'zákeřný', //insidious
-  'základní', //basic
+  // 'základní', //basic
   'základní', //elementary
   'zákonné', //lawful
-  'zakřivení', //curvy
+  // 'zakřivení', //curvy
   'záludný', //sneaky
-  'zaměřen', //focused  Nejpoužívanější přídavná j
+  // 'zaměřen', //focused  Nejpoužívanější přídavná j
   'špatný', //bad
   'zamrzlý', //frozen
   'zanedbané', //neglected
@@ -1284,28 +1284,28 @@ export default [
   'závistivý', //envious
   'štíhlý', //slim
   'závratný', //giddy
-  'zavrčel', //snarling
-  'Zavřeno', //closed
-  'zavřít', //close
-  'zbožňoval', //adored
-  'zbytečné', //pointless
-  'Zbytečný', //useless
+  // 'zavrčel', //snarling
+  // 'Zavřeno', //closed
+  // 'zavřít', //close
+  // 'zbožňoval', //adored
+  // 'zbytečné', //pointless
+  'zbytečný', //useless
   'zdobené', //embellished
   'zdravý', //healthy
   'zdrcující', //crushing
-  'zdvořilý', //courteous
+  // 'zdvořilý', //courteous
   'zdvořilý', //polite
   'zelená', //green  Nejpoužívanější přídavná j
   'tenký', //thin
-  'zívání', //yawning
+  // 'zívání', //yawning
   'teplý', //warm
   'zkorumpovaný', //corrupt
   'zkreslené', //distorted
   'zkroucený', //warped
   'zkušený', //experienced
-  'zlatíčko moje', //darling
+  // 'zlatíčko moje', //darling
   'zlatý', //golden
-  'zlo', //evil
+  // 'zlo', //evil
   'těžký', //heavy
   'tichý', //quiet, silent
   'zlomyslný', //spiteful
@@ -1314,41 +1314,41 @@ export default [
   'tmavý', //dark
   'zmatený', //puzzled
   'znalostí', //knowledgeable
-  'znamenat', //mean
+  // 'znamenat', //mean
   'známý', //known
-  'znát', //familiar
+  // 'znát', //familiar
   'znepokojen', //alarmed
   'trpělivý', //patient
   'trpný', //passive
   'znetvořený', //disfigured
   'zpocený', //sweaty
-  'zpožděné', //delayed
+  // 'zpožděné', //delayed
   'zpožděný', //overdue
   'zralý', //mature
   'tupý', //blunt, dull
   'zrnitý', //granular
   'zřejmé', //obvious
-  'ztlumit', //dim
+  // 'ztlumit', //dim
   'tvrdý', //hard
   'zubatý', //jagged  Nejpoužívanější přídavná j
   'typický', //typical
-  'zvláštní', //odd
+  // 'zvláštní', //odd
   'zvláštní', //quirky
   'zvlněný', //wilted
   'zvonění', //ringed
   'žádný', //any
-  'žalostné', //pitiful
-  'žalostný', //measly
-  'žalostný', //plaintive
+  // 'žalostné', //pitiful
+  // 'žalostný', //measly
+  // 'žalostný', //plaintive
   'žalostný', //woeful
   'žárlivý', //jealous
-  'že', //that
-  'že jo', //right
+  // 'že', //that
+  // 'že jo', //right
   'ženatý', //married
-  'ženský', //female
+  // 'ženský', //female
   'ženský', //feminine  Nejpoužívanější přídavná j
   'unavený', //tired
-  'živý', //lively
+  // 'živý', //lively
   'živý', //vivid
   'žíznivý', //thirsty
   'žlutá', //yellow
