@@ -127,10 +127,12 @@ export default function Timer() {
           {timer != null && (
             <View style={{flexDirection: 'row'}}>
               <Button onPress={() => setPause(!pause)}>
-                {pause ? 'Pokračovat' : 'Pauza'}
+                <Icon name={pause ? 'play' : 'pause'} />
               </Button>
               <View style={{width: 16}} />
-              <Button onPress={() => setTimer(null)}>Stop</Button>
+              <Button onPress={() => setTimer(null)}>
+                <Icon name={'stop'} />
+              </Button>
             </View>
           )}
         </View>
