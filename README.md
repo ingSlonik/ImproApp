@@ -10,16 +10,16 @@ Your assistant in theater improvisation.
 ## Funkce
 
 - [x] Android app.
-- [x] Improvisation timer.
-- [x] Random word generator.
-- [x] List of categories with description.
-  - [x] CZ ImproWiki
-  - [X] EN 
 - [x] Multi-language
   - [x] Čeština
   - [x] English
   - [ ] Espanol
   - [ ] etc.
+- [x] Improvisation timer.
+- [x] Random word generator.
+- [x] List of categories with description.
+  - [x] CZ ImproWiki
+  - [X] EN Improv Encyclopedia
 - [ ] iOS app.
 - [ ] Custom edition of random words.
 
