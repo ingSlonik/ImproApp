@@ -14,8 +14,9 @@ import {
 } from 'react-native';
 
 import {WebView} from 'react-native-webview';
-
 import {parse} from 'fast-html-parser';
+
+import {useDictionary} from '../services/language';
 
 type Category = {name: string, link: string};
 
@@ -127,25 +128,31 @@ function getSections(categories: Array<Category>) {
 }
 
 function useCategoriesList(): null | Array<Category> {
+  const dict = useDictionary();
   const [categories, setCategories] = useState<null | Array<Category>>(null);
 
   useEffect(() => {
+    setCategories(null);
     (async () => {
-      const response = await fetch(
-        'https://wiki.improliga.cz/wiki/Kategorie:Seznam_kategori%C3%AD',
-      );
+      const response = await fetch(dict('urlCategories'));
       const responseText = await response.text();
       const root = parse(responseText);
-      const links = root.querySelectorAll('#mw-pages .mw-category-group li a');
+      const links = root.querySelectorAll(dict('selectorCategories'));
+
+      const filterLink = dict('filterCategories');
 
       setCategories(
-        links.map(a => ({
-          name: a.rawText,
-          link: 'https://wiki.improliga.cz' + a.attributes.href,
-        })),
+        links
+          .filter(
+            a => a.attributes.href && a.attributes.href.includes(filterLink),
+          )
+          .map(a => ({
+            name: a.rawText,
+            link: dict('linkCategories') + a.attributes.href,
+          })),
       );
     })();
-  }, []);
+  }, [dict]);
 
   return categories;
 }

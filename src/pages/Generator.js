@@ -9,6 +9,8 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import {Content, H1, H2, Button} from '../components/Elements';
 
+import {useDictionary} from '../services/language';
+
 import {
   getRandomAdjective,
   getRandomGenre,
@@ -21,6 +23,8 @@ import {
 } from '../services/words';
 
 export default function Generator() {
+  const dict = useDictionary();
+
   const [adjective, setAdjective] = useState('...');
   const [genre, setGenre] = useState('...');
   const [noun, setNoun] = useState('...');
@@ -30,7 +34,7 @@ export default function Generator() {
     <Content>
       <View style={{flexDirection: 'row', alignItems: 'center'}}>
         <View style={{flexGrow: 10}}>
-          <H1>Generátor slov</H1>
+          <H1>{dict('wordGenerator')}</H1>
         </View>
         <Button
           onPress={() => {
@@ -39,25 +43,25 @@ export default function Generator() {
             setPlace(getRandomPlace());
             setGenre(getRandomGenre());
           }}>
-          Vše
+          {dict('all')}
         </Button>
       </View>
       <View style={{flexGrow: 1, justifyContent: 'space-around'}}>
         <View>
           <H2>
-            Téma ({getCountAdjectives()}, {getCountNouns()})
+            {dict('theme')} ({getCountAdjectives()}, {getCountNouns()})
           </H2>
           <View style={{flexDirection: 'row'}}>
-            <View style={{flexGrow: 1, alignItems: 'stretch'}}>
+            <View style={{flexGrow: 1, flexBasis: 100, alignItems: 'stretch'}}>
               <Button onPress={() => setAdjective(getRandomAdjective())}>
-                Přídavné jméno
+                {dict('adjective')}
               </Button>
               <Word>{adjective}</Word>
             </View>
             <View style={{width: 16}} />
-            <View style={{flexGrow: 1, alignItems: 'stretch'}}>
+            <View style={{flexGrow: 1, flexBasis: 100, alignItems: 'stretch'}}>
               <Button onPress={() => setNoun(getRandomNoun())}>
-                Podstatné jméno
+                {dict('noun')}
               </Button>
               <Word>{noun}</Word>
             </View>
@@ -65,17 +69,21 @@ export default function Generator() {
         </View>
 
         <View>
-          <H2>Prostředí ({getCountPlaces()})</H2>
+          <H2>
+            {dict('place')} ({getCountPlaces()})
+          </H2>
           <Button onPress={() => setPlace(getRandomPlace())}>
-            Generovat prostředí
+            {dict('generatePlace')}
           </Button>
           <Word>{place}</Word>
         </View>
 
         <View>
-          <H2>Žánr ({getCountGenres()})</H2>
+          <H2>
+            {dict('genre')} ({getCountGenres()})
+          </H2>
           <Button onPress={() => setGenre(getRandomGenre())}>
-            Generovat žánr
+            {dict('generateGenre')}
           </Button>
           <Word>{genre}</Word>
         </View>

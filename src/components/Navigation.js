@@ -8,6 +8,8 @@ import {View, Text, TouchableNativeFeedback, Linking} from 'react-native';
 
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
+import {useDictionary} from '../services/language';
+
 import {Modal} from './Elements';
 import Toolbar from './Toolbar';
 
@@ -16,6 +18,7 @@ export default function Navigation({
 }: {
   onChange: (page: null | string) => mixed,
 }) {
+  const dict = useDictionary();
   const [showModal, setShowModal] = useState(false);
 
   return (
@@ -24,17 +27,17 @@ export default function Navigation({
       <View style={{flexGrow: 1}}>
         <NavItem
           icon="magnify"
-          text="Generátor slov"
+          text={dict('wordGenerator')}
           onPress={() => onChange('generator')}
         />
         <NavItem
           icon="timer"
-          text="Impro stopky"
+          text={dict('improvTimer')}
           onPress={() => onChange('timer')}
         />
         <NavItem
           icon="format-list-bulleted"
-          text="Seznam kategorií"
+          text={dict('categoriesList')}
           onPress={() => onChange('categories')}
         />
       </View>
@@ -48,7 +51,7 @@ export default function Navigation({
 
         <Modal
           show={showModal}
-          title="O Impro App"
+          title={dict('aboutApp')}
           onClose={() => setShowModal(false)}
           button="Rozumím"
           onPress={() => setShowModal(false)}>

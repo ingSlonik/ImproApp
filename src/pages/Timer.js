@@ -21,6 +21,8 @@ import {
   playRefereeWhistle,
 } from '../services/sound';
 
+import {useDictionary} from '../services/language';
+
 import KeepAwake from 'react-native-keep-awake';
 
 import {Content, H1, Button, Modal} from '../components/Elements';
@@ -28,6 +30,8 @@ import {Content, H1, Button, Modal} from '../components/Elements';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 export default function Timer() {
+  const dict = useDictionary();
+
   const refTimer = useRef(setTimeout(() => {}, 0));
   const [timer, setTimer] = useState<number | null>(null);
   const [pause, setPause] = useState(false);
@@ -92,7 +96,7 @@ export default function Timer() {
 
   return (
     <Content>
-      <H1>Impro stopky</H1>
+      <H1>{dict('improvTimer')}</H1>
 
       <View
         style={{
@@ -131,7 +135,7 @@ export default function Timer() {
                 </Button>
                 <View style={{width: 16}} />
                 <Button onPress={() => handleTimer(Math.round(setTime / 2))}>
-                  Nastav polovinu
+                  {dict('halfTime')}
                 </Button>
               </View>
             )}
@@ -164,7 +168,7 @@ export default function Timer() {
         </View>
         <View
           style={{flexDirection: 'row', alignItems: 'center', marginTop: 16}}>
-          <Button onPress={() => setShowModal(true)}>Nastavit čas</Button>
+          <Button onPress={() => setShowModal(true)}>{dict('setTime')}</Button>
 
           <Modal
             show={showModal}
@@ -173,8 +177,8 @@ export default function Timer() {
               handleTimer(getTimeFromString(customTime));
             }}
             onClose={() => setShowModal(false)}
-            title="Nastavit čas"
-            button="Start">
+            title={dict('setTime')}
+            button={dict('start')}>
             <TextInput
               style={{
                 flexGrow: 1,
