@@ -8,6 +8,7 @@ import {View, Text, TouchableNativeFeedback} from 'react-native';
 
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
+import LangSelect from './LangSelect';
 import {primary, primaryText} from '../services/colors';
 
 type ImproToolbarProps = {
@@ -40,6 +41,10 @@ export default function ImproToolbar({
       <Text style={{color: primaryText, fontSize: 20, fontWeight: 'bold'}}>
         Impro App
       </Text>
+
+      <View style={{flexGrow: 1}} />
+
+      <LangSelect />
     </View>
   );
 }
