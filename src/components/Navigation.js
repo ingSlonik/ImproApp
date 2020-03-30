@@ -45,7 +45,7 @@ export default function Navigation({
       <View>
         <NavItem
           icon="information"
-          text="O applikaci"
+          text={dict('aboutApp')}
           onPress={() => setShowModal(true)}
         />
 
@@ -53,11 +53,10 @@ export default function Navigation({
           show={showModal}
           title={dict('aboutApp')}
           onClose={() => setShowModal(false)}
-          button="Rozumím"
+          button={dict('ok')}
           onPress={() => setShowModal(false)}>
           <Text>
-            Tato aplikace je na světě díky nejstaršímu nepřejmenovanému
-            nerozpadlému improvizačnímu týmu nejvyšší české improvizační soutěže{' '}
+            {dict('about1')}{' '}
             <Text
               style={{color: 'blue'}}
               onPress={() => Linking.openURL('https://improliga.cz/')}>
@@ -65,15 +64,8 @@ export default function Navigation({
             </Text>
             .
           </Text>
-          <Text style={{paddingTop: 16}}>
-            Nejdříve moc děkuji improlize, díky které zde máme seznam kategorií
-            prostřednictvím Impro Wiki.
-          </Text>
-          <Text style={{paddingTop: 16}}>
-            Dále bych chtěl poukázat na to, jak jsem cool. Tato applikace je
-            zdarma a zcela bez reklam. Pokud by jste chtěli přispět na vývoj,
-            dát zpětnou vazbu nebo něco doprogramovat, použíjte odkaz níže.
-          </Text>
+          <Text style={{paddingTop: 16}}>{dict('about2')}</Text>
+          <Text style={{paddingTop: 16}}>{dict('about3')}</Text>
           <NavItem
             icon="github-circle"
             text="GitHub"

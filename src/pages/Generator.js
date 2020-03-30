@@ -93,9 +93,7 @@ export default function Generator() {
           Linking.openURL('https://github.com/ingSlonik/ImproApp')
         }>
         <Text>
-          Přátelé, sbírka slov není velká a už vůbec né ucelená. Když mi ji
-          pomůžete dát dohromady, budu Vám velice vděčen.{' '}
-          <Icon name="github-circle" />
+          {dict('infoGenerator')} <Icon name="github-circle" />
         </Text>
       </TouchableNativeFeedback>
     </Content>

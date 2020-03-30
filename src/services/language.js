@@ -92,6 +92,10 @@ const dictionary: {[word: string]: {[lang: Lang]: string}} = {
     cs: 'O Impro App',
     en: 'About Impro App',
   },
+  ok: {
+    cs: 'Rozumím',
+    en: 'O.K.',
+  },
   all: {
     cs: 'Vše',
     en: 'All',
@@ -151,5 +155,31 @@ const dictionary: {[word: string]: {[lang: Lang]: string}} = {
   filterCategories: {
     cs: '',
     en: 'http://improvencyclopedia.org/games/',
+  },
+
+  infoGenerator: {
+    cs:
+      'Přátelé, sbírka slov není velká a už vůbec né ucelená. Když mi ji pomůžete dát dohromady, budu Vám velice vděčen.',
+    en:
+      'Friends, the word collection is not big and not complete at all. If you help me put it together, I will be very grateful.',
+  },
+
+  about1: {
+    cs:
+      'Tato aplikace je na světě díky nejstaršímu nepřejmenovanému nerozpadlému improvizačnímu týmu nejvyšší české improvizační soutěže',
+    en:
+      'This app is in the world thanks to the oldest unrenamed unbraked up improvisation team of the highest Czech improvisation competition',
+  },
+  about2: {
+    cs:
+      'Nejdříve moc děkuji improlize, díky které zde máme seznam kategorií prostřednictvím Impro Wiki.',
+    en:
+      'As first, thank you very much for improvencyclopedia.org, thanks to which we have a list of categories.',
+  },
+  about3: {
+    cs:
+      'Dále bych chtěl poukázat na to, jak jsem cool. Tato applikace je zdarma a zcela bez reklam. Pokud by jste chtěli přispět na vývoj, dát zpětnou vazbu nebo něco doprogramovat, použíjte odkaz níže.',
+    en:
+      'Next, I would like to point out how cool I am. This application is free and completely free of ads. If you would like to donate to development, give feedback or program something, use the link below.',
   },
 };
