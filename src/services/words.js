@@ -3,40 +3,55 @@
  * @flow
  */
 
-import adjectives from '../lists/adjectives';
-import genres from '../lists/genres';
-import nouns from '../lists/nouns';
-import places from '../lists/places';
+import type {Lang} from '../services/language';
 
-export function getCountAdjectives(): number {
+import adjectivesCs from '../dictionaries/adjectivesCs';
+import genresCs from '../dictionaries/genresCs';
+import nounsCs from '../dictionaries/nounsCs';
+import placesCs from '../dictionaries/placesCs';
+
+import adjectivesEn from '../dictionaries/adjectivesEn';
+import genresEn from '../dictionaries/genresEn';
+import nounsEn from '../dictionaries/nounsEn';
+import placesEn from '../dictionaries/placesEn';
+
+export function getCountAdjectives(lang: Lang): number {
+  const adjectives = lang === 'cs' ? adjectivesCs : adjectivesEn;
   return adjectives.length;
 }
 
-export function getCountGenres(): number {
+export function getCountGenres(lang: Lang): number {
+  const genres = lang === 'cs' ? genresCs : genresEn;
   return genres.length;
 }
 
-export function getCountNouns(): number {
+export function getCountNouns(lang: Lang): number {
+  const nouns = lang === 'cs' ? nounsCs : nounsEn;
   return nouns.length;
 }
 
-export function getCountPlaces(): number {
+export function getCountPlaces(lang: Lang): number {
+  const places = lang === 'cs' ? placesCs : placesEn;
   return places.length;
 }
 
-export function getRandomAdjective(): string {
+export function getRandomAdjective(lang: Lang): string {
+  const adjectives = lang === 'cs' ? adjectivesCs : adjectivesEn;
   return getRandom(adjectives);
 }
 
-export function getRandomNoun(): string {
+export function getRandomNoun(lang: Lang): string {
+  const nouns = lang === 'cs' ? nounsCs : nounsEn;
   return getRandom(nouns);
 }
 
-export function getRandomPlace(): string {
+export function getRandomPlace(lang: Lang): string {
+  const places = lang === 'cs' ? placesCs : placesEn;
   return getRandom(places);
 }
 
-export function getRandomGenre(): string {
+export function getRandomGenre(lang: Lang): string {
+  const genres = lang === 'cs' ? genresCs : genresEn;
   return getRandom(genres);
 }
 

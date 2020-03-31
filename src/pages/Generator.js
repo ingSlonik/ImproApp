@@ -9,7 +9,7 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import {Content, H1, H2, Button} from '../components/Elements';
 
-import {useDictionary} from '../services/language';
+import {useDictionary, useLang} from '../services/language';
 
 import {
   getRandomAdjective,
@@ -23,6 +23,7 @@ import {
 } from '../services/words';
 
 export default function Generator() {
+  const {lang} = useLang();
   const dict = useDictionary();
 
   const [adjective, setAdjective] = useState('...');
@@ -38,10 +39,10 @@ export default function Generator() {
         </View>
         <Button
           onPress={() => {
-            setAdjective(getRandomAdjective());
-            setNoun(getRandomNoun());
-            setPlace(getRandomPlace());
-            setGenre(getRandomGenre());
+            setAdjective(getRandomAdjective(lang));
+            setNoun(getRandomNoun(lang));
+            setPlace(getRandomPlace(lang));
+            setGenre(getRandomGenre(lang));
           }}>
           {dict('all')}
         </Button>
@@ -49,18 +50,18 @@ export default function Generator() {
       <View style={{flexGrow: 1, justifyContent: 'space-around'}}>
         <View>
           <H2>
-            {dict('theme')} ({getCountAdjectives()}, {getCountNouns()})
+            {dict('theme')} ({getCountAdjectives(lang)}, {getCountNouns(lang)})
           </H2>
           <View style={{flexDirection: 'row'}}>
             <View style={{flexGrow: 1, flexBasis: 100, alignItems: 'stretch'}}>
-              <Button onPress={() => setAdjective(getRandomAdjective())}>
+              <Button onPress={() => setAdjective(getRandomAdjective(lang))}>
                 {dict('adjective')}
               </Button>
               <Word>{adjective}</Word>
             </View>
             <View style={{width: 16}} />
             <View style={{flexGrow: 1, flexBasis: 100, alignItems: 'stretch'}}>
-              <Button onPress={() => setNoun(getRandomNoun())}>
+              <Button onPress={() => setNoun(getRandomNoun(lang))}>
                 {dict('noun')}
               </Button>
               <Word>{noun}</Word>
@@ -70,9 +71,9 @@ export default function Generator() {
 
         <View>
           <H2>
-            {dict('place')} ({getCountPlaces()})
+            {dict('place')} ({getCountPlaces(lang)})
           </H2>
-          <Button onPress={() => setPlace(getRandomPlace())}>
+          <Button onPress={() => setPlace(getRandomPlace(lang))}>
             {dict('generatePlace')}
           </Button>
           <Word>{place}</Word>
@@ -80,9 +81,9 @@ export default function Generator() {
 
         <View>
           <H2>
-            {dict('genre')} ({getCountGenres()})
+            {dict('genre')} ({getCountGenres(lang)})
           </H2>
-          <Button onPress={() => setGenre(getRandomGenre())}>
+          <Button onPress={() => setGenre(getRandomGenre(lang))}>
             {dict('generateGenre')}
           </Button>
           <Word>{genre}</Word>

@@ -9,7 +9,7 @@ import React, {
 } from 'react';
 import {findBestAvailableLanguage} from 'react-native-localize';
 
-type Lang = 'cs' | 'en';
+export type Lang = 'cs' | 'en';
 
 type LangContextProps = {
   lang: Lang,
