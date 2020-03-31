@@ -1,6 +1,6 @@
 # Impro App
 
-Your assistant in theater improvisation.
+Your assistant in theatre improvisation.
 
 ## Download
 
@@ -20,6 +20,7 @@ Your assistant in theater improvisation.
 - [x] List of categories with description.
   - [x] CZ ImproWiki
   - [X] EN Improv Encyclopedia
+  - [ ] Favorite categories.
 - [ ] iOS app.
 - [ ] Custom edition of random words.
 
