@@ -23,6 +23,22 @@ Your assistant in theater improvisation.
 - [ ] iOS app.
 - [ ] Custom edition of random words.
 
+## Screenshots
+
+### CZ
+
+![screenshot menu cs](./doc/images/ScreenshotCs0.jpg)
+![screenshot generator cs](./doc/images/ScreenshotCs1.jpg)
+![screenshot timer cs](./doc/images/ScreenshotCs2.jpg)
+![screenshot list of categories cs](./doc/images/ScreenshotCs3.jpg)
+
+### EN
+
+![screenshot menu en](./doc/images/ScreenshotEn0.jpg)
+![screenshot generator en](./doc/images/ScreenshotEn1.jpg)
+![screenshot timer en](./doc/images/ScreenshotEn2.jpg)
+![screenshot list of categories en](./doc/images/ScreenshotEn3.jpg)
+
 ## Donation
 
 If this app helps you, don't hesitate to buy me a beer.
