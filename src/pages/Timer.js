@@ -24,10 +24,11 @@ import {
 } from '../services/sound';
 
 import {useTimer} from '../services/hooks';
-import {useDictionary} from '../services/language';
+import {useDictionary, useLang, type Lang} from '../services/language';
 import {Content, H1, Button, Modal} from '../components/Elements';
 
 export default function Timer() {
+  const {lang} = useLang();
   const dict = useDictionary();
 
   const [showModal, setShowModal] = useState(false);
@@ -39,7 +40,7 @@ export default function Timer() {
   const [pausedTime, setPausedTime] = useState(0);
 
   const {time, run, onStart, onStop, onPause} = useTimer(t => {
-    playSound(timerFrom, t, sound);
+    playSound(timerFrom, t, sound, lang);
     makeVibration(timerFrom, t, vibration);
   });
 
@@ -185,7 +186,12 @@ function Time({children}) {
   );
 }
 
-function playSound(timerFrom: number, time: number, sound: boolean) {
+function playSound(
+  timerFrom: number,
+  time: number,
+  sound: boolean,
+  lang: Lang,
+) {
   const half = Math.round(timerFrom / 2);
   if (sound) {
     if (time === 0) {
@@ -195,9 +201,9 @@ function playSound(timerFrom: number, time: number, sound: boolean) {
     } else if ([4, 2].includes(time)) {
       playTik();
     } else if (time === 10) {
-      playTen();
+      playTen(lang);
     } else if (time === half && time > 0) {
-      playHalf();
+      playHalf(lang);
     }
   }
 }
