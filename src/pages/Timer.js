@@ -3,7 +3,9 @@
  * @flow
  */
 
-import React, {useState, useEffect, useRef} from 'react';
+import React, {useState} from 'react';
+import KeepAwake from 'react-native-keep-awake';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import {
   View,
@@ -21,14 +23,9 @@ import {
   playRefereeWhistle,
 } from '../services/sound';
 
-import {useMounted, useInterval} from '../services/hooks';
+import {useTimer} from '../services/hooks';
 import {useDictionary} from '../services/language';
-
-import KeepAwake from 'react-native-keep-awake';
-
 import {Content, H1, Button, Modal} from '../components/Elements';
-
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 export default function Timer() {
   const dict = useDictionary();
@@ -38,53 +35,28 @@ export default function Timer() {
 
   const [sound, setSound] = useState(true);
   const [vibration, setVibration] = useState(true);
-  const [run, setRun] = useState(false);
   const [timerFrom, setTimerFrom] = useState(0);
-  const time = useInterval<number>(
-    run,
-    delay => {
-      const newTime = timerFrom - Math.floor(delay / 1000);
-      // sound and vibration
-      const half = Math.round(timerFrom / 2);
-      if (vibration && timerFrom > 0) {
-        if ([half, 10, 5, 4, 3, 2, 1].includes(newTime)) {
-          Vibration.vibrate(500);
-        }
-      }
-      if (sound) {
-        if (newTime === 0) {
-          playRefereeWhistle();
-        } else if ([5, 3, 1].includes(newTime)) {
-          playTak();
-        } else if ([4, 2].includes(newTime)) {
-          playTik();
-        } else if (newTime === 10) {
-          playTen();
-        } else if (newTime === half && newTime > 0) {
-          playHalf();
-        }
-      }
+  const [pausedTime, setPausedTime] = useState(0);
 
-      if (newTime < 0) {
-        setRun(false);
-        return 0;
-      } else {
-        return newTime;
-      }
-    },
-    1000,
-    0,
-  );
+  const {time, run, onStart, onStop, onPause} = useTimer(t => {
+    playSound(timerFrom, t, sound);
+    makeVibration(timerFrom, t, vibration);
+  });
 
   function handleStartTimer(timer: number) {
-    setRun(true);
+    onStart(timer);
     setTimerFrom(timer);
   }
   function handlePause() {
-    setRun(false);
+    if (run) {
+      onPause();
+      setPausedTime(time);
+    } else {
+      onStart(pausedTime);
+    }
   }
   function handleStop() {
-    setRun(false);
+    onStop();
   }
 
   return (
@@ -135,7 +107,7 @@ export default function Timer() {
             )}
           </View>
           <Text style={{fontSize: 100, textAlign: 'center'}}>
-            <Time>{time}</Time>
+            <Time>{Number(time)}</Time>
           </Text>
           {time > 0 && (
             <View style={{flexDirection: 'row'}}>
@@ -161,7 +133,11 @@ export default function Timer() {
           <Button onPress={() => handleStartTimer(30)}>0:30</Button>
         </View>
         <View
-          style={{flexDirection: 'row', alignItems: 'center', marginTop: 16}}>
+          style={{
+            flexDirection: 'row',
+            alignItems: 'center',
+            marginTop: 16,
+          }}>
           <Button onPress={() => setShowModal(true)}>{dict('setTime')}</Button>
 
           <Modal
@@ -208,21 +184,33 @@ function Time({children}) {
     </>
   );
 }
-/*
-function handleTimer(setTime: number, setTimer: TimerState => TimerState) {
-  setTimer(t => {
-    clearInterval(t.interval);
-    const start = Date.now();
 
-    const interval = setInterval(() => {
-      setTimer(timer => {
-
-    }, 1000);
-
-    return {...t, setTime, interval, run: true, time: setTime};
-  });
+function playSound(timerFrom: number, time: number, sound: boolean) {
+  const half = Math.round(timerFrom / 2);
+  if (sound) {
+    if (time === 0) {
+      playRefereeWhistle();
+    } else if ([5, 3, 1].includes(time)) {
+      playTak();
+    } else if ([4, 2].includes(time)) {
+      playTik();
+    } else if (time === 10) {
+      playTen();
+    } else if (time === half && time > 0) {
+      playHalf();
+    }
+  }
 }
-*/
+
+function makeVibration(timerFrom: number, time: number, vibration: boolean) {
+  const half = Math.round(timerFrom / 2);
+  if (vibration && timerFrom > 0) {
+    if ([half, 10, 5, 4, 3, 2, 1].includes(time)) {
+      Vibration.vibrate(500);
+    }
+  }
+}
+
 function getTimeFromString(time: string): number {
   const [min, sec] = time.split(':').map(t => parseInt(t, 10));
   if (typeof sec !== 'number') {

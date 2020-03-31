@@ -9,30 +9,51 @@ export function useMounted(): {current: boolean} {
   return isMounted;
 }
 
-export function useInterval<T>(
-  run: boolean,
-  getValue: number => T,
-  timeout: number,
-  defaultValue: T,
-): T {
-  const [time, setTime] = useState(defaultValue);
-  const [refGetValue] = useState({current: getValue});
-  refGetValue.current = getValue;
+export function useTimer(onChange: number => mixed) {
+  const [time, setTime] = useState<number>(0);
+  const [timeFrom, setTimeFrom] = useState<null | number>(null);
+  const [refOnChange] = useState({current: onChange});
+  refOnChange.current = onChange;
 
   useEffect(() => {
-    if (run) {
+    if (timeFrom !== null) {
       const dateStart = Date.now();
-      setTime(refGetValue.current(0));
       const interval = setInterval(() => {
         const dateNow = Date.now();
-        setTime(refGetValue.current(dateNow - dateStart));
-      }, timeout);
+        const newTime = timeFrom - Math.floor((dateNow - dateStart) / 1000);
+        if (newTime >= 0) {
+          refOnChange.current(newTime);
+          setTime(newTime);
+          if (newTime === 0) {
+            setTimeFrom(null);
+            clearInterval(interval);
+          }
+        } else {
+          setTime(0);
+          setTimeFrom(null);
+          clearInterval(interval);
+        }
+      }, 1000);
 
       return () => {
         clearInterval(interval);
       };
     }
-  }, [run, timeout, refGetValue]);
+  }, [timeFrom, refOnChange]);
 
-  return time;
+  return {
+    time,
+    run: timeFrom !== null,
+    onStart: (t: number) => {
+      setTime(t);
+      setTimeFrom(t);
+    },
+    onStop: () => {
+      setTime(0);
+      setTimeFrom(null);
+    },
+    onPause: () => {
+      setTimeFrom(null);
+    },
+  };
 }
