@@ -7,7 +7,7 @@ import React, {
   useMemo,
   type Node,
 } from 'react';
-import {findBestAvailableLanguage} from 'react-native-localize';
+import {Platform, NativeModules} from 'react-native';
 
 export type Lang = 'cs' | 'en';
 
@@ -59,9 +59,18 @@ export function useDictionary(): string => string {
 }
 
 function getDefaultLang(): Lang {
-  const preferredLang = findBestAvailableLanguage(['en', 'cz']);
-  if (langList.includes(preferredLang.languageTag)) {
-    return preferredLang.languageTag;
+  // deviceLanguage from: https://stackoverflow.com/questions/33468746/whats-the-best-way-to-get-device-locale-in-react-native-ios/40289188
+  const deviceLanguage: string =
+    Platform.OS === 'ios'
+      ? NativeModules.SettingsManager.settings.AppleLocale ||
+        NativeModules.SettingsManager.settings.AppleLanguages[0] //iOS 13
+      : NativeModules.I18nManager.localeIdentifier;
+
+  if (
+    deviceLanguage.toLocaleLowerCase().includes('cs') ||
+    deviceLanguage.toLocaleLowerCase().includes('cz')
+  ) {
+    return 'cs';
   } else {
     return 'en';
   }
