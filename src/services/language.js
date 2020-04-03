@@ -139,7 +139,7 @@ const dictionary: {[word: string]: {[lang: Lang]: string}} = {
   },
   halfTime: {
     cs: 'Nastav polovinu',
-    en: 'Half time',
+    en: 'Set half time',
   },
   setTime: {
     cs: 'Nastavit čas',
@@ -177,7 +177,7 @@ const dictionary: {[word: string]: {[lang: Lang]: string}} = {
     cs:
       'Tato aplikace je na světě díky nejstaršímu nepřejmenovanému nerozpadlému improvizačnímu týmu nejvyšší české improvizační soutěže',
     en:
-      'This app is in the world thanks to the oldest unrenamed unbraked up improvisation team of the highest Czech improvisation competition',
+      'This app is in the world thanks to the oldest unrenamed unbroken up improvisation team of the highest Czech improvisation competition',
   },
   about2: {
     cs:
@@ -189,6 +189,6 @@ const dictionary: {[word: string]: {[lang: Lang]: string}} = {
     cs:
       'Dále bych chtěl poukázat na to, jak jsem cool. Tato applikace je zdarma a zcela bez reklam. Pokud by jste chtěli přispět na vývoj, dát zpětnou vazbu nebo něco doprogramovat, použíjte odkaz níže.',
     en:
-      'Next, I would like to point out how cool I am. This application is free and completely free of ads. If you would like to donate to development, give feedback or program something, use the link below.',
+      'Next, I would like to point out how cool I am. This application is free and completely free of ads. If you would like to donate to development, give Aala a cute piglet, feedback or program something. Use the link below.',
   },
 };
