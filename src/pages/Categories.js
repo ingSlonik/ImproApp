@@ -45,7 +45,7 @@ export default function Categories() {
 
   return (
     <View style={{flexGrow: 1, justifyContent: 'center'}}>
-      {(categories === null || (url !== null && loading === true)) && (
+      {(!Array.isArray(categories) || (url !== null && loading === true)) && (
         <View
           style={{
             width: '100%',
@@ -54,11 +54,12 @@ export default function Categories() {
             justifyContent: 'center',
             alignItems: 'center',
           }}>
-          <ActivityIndicator size="large" />
+          {categories === null && <ActivityIndicator size="large" />}
+          {categories instanceof Error && <Text>{categories.message}</Text>}
         </View>
       )}
 
-      {categories !== null && url === null && (
+      {Array.isArray(categories) && url === null && (
         <SectionList
           // With height 50% fixed issues https://stackoverflow.com/questions/49570059/scroll-area-too-small-with-sectionlist-react-native
           style={{flexGrow: 1, height: '50%', position: 'relative', zIndex: 1}}
@@ -127,30 +128,36 @@ function getSections(categories: Array<Category>) {
   return Object.keys(sections).map(title => ({title, data: sections[title]}));
 }
 
-function useCategoriesList(): null | Array<Category> {
+function useCategoriesList(): null | Error | Array<Category> {
   const dict = useDictionary();
-  const [categories, setCategories] = useState<null | Array<Category>>(null);
+  const [categories, setCategories] = useState<null | Error | Array<Category>>(
+    null,
+  );
 
   useEffect(() => {
     setCategories(null);
     (async () => {
-      const response = await fetch(dict('urlCategories'));
-      const responseText = await response.text();
-      const root = parse(responseText);
-      const links = root.querySelectorAll(dict('selectorCategories'));
+      try {
+        const response = await fetch(dict('urlCategories'));
+        const responseText = await response.text();
+        const root = parse(responseText);
+        const links = root.querySelectorAll(dict('selectorCategories'));
 
-      const filterLink = dict('filterCategories');
+        const filterLink = dict('filterCategories');
 
-      setCategories(
-        links
-          .filter(
-            a => a.attributes.href && a.attributes.href.includes(filterLink),
-          )
-          .map(a => ({
-            name: a.rawText,
-            link: dict('linkCategories') + a.attributes.href,
-          })),
-      );
+        setCategories(
+          links
+            .filter(
+              a => a.attributes.href && a.attributes.href.includes(filterLink),
+            )
+            .map(a => ({
+              name: a.rawText,
+              link: dict('linkCategories') + a.attributes.href,
+            })),
+        );
+      } catch (e) {
+        setCategories(e);
+      }
     })();
   }, [dict]);
 
