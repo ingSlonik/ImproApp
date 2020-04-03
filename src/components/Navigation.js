@@ -8,6 +8,8 @@ import {View, Text, TouchableNativeFeedback, Linking} from 'react-native';
 
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
+import {version} from '../../package.json';
+
 import {useDictionary} from '../services/language';
 
 import {Modal} from './Elements';
@@ -75,9 +77,15 @@ export default function Navigation({
           />
         </Modal>
 
-        <Text style={{padding: 16, textAlign: 'right', color: '#888'}}>
-          Filip Paulů
-        </Text>
+        <View
+          style={{
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            padding: 16,
+          }}>
+          <Text style={{color: '#888'}}>Filip Paulů</Text>
+          <Text style={{color: '#888'}}>v{version}</Text>
+        </View>
       </View>
     </View>
   );
