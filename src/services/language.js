@@ -149,6 +149,14 @@ const dictionary: {[word: string]: {[lang: Lang]: string}} = {
     cs: 'Start',
     en: 'Start',
   },
+  source: {
+    cs: 'Zdroj',
+    en: 'Source',
+  },
+  sourceUrl: {
+    cs: 'https://wiki.improliga.cz',
+    en: 'http://improvencyclopedia.org',
+  },
   urlCategories: {
     cs: 'https://wiki.improliga.cz/wiki/Kategorie:Seznam_kategori%C3%AD',
     en: 'http://improvencyclopedia.org/games/index.html',

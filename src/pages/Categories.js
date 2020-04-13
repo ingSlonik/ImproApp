@@ -24,6 +24,7 @@ export default function Categories() {
   const [url, setUrl] = useState<null | string>(null);
   const [loading, setLoading] = useState(true);
 
+  const dict = useDictionary();
   const categories = useCategoriesList();
 
   useEffect(() => {
@@ -64,7 +65,7 @@ export default function Categories() {
           // With height 50% fixed issues https://stackoverflow.com/questions/49570059/scroll-area-too-small-with-sectionlist-react-native
           style={{flexGrow: 1, height: '50%', position: 'relative', zIndex: 1}}
           stickySectionHeadersEnabled
-          sections={getSections(categories)}
+          sections={getSections(categories, dict)}
           keyExtractor={(item, index) => item.name + index}
           renderItem={({item}) => (
             <Item {...item} onPress={link => setUrl(link)} />
@@ -114,7 +115,7 @@ function Item({name, link, onPress}: Category & {onPress: string => mixed}) {
   );
 }
 
-function getSections(categories: Array<Category>) {
+function getSections(categories: Array<Category>, dict: string => string) {
   const sections = {};
 
   categories.forEach(category => {
@@ -125,7 +126,15 @@ function getSections(categories: Array<Category>) {
     sections[title].push(category);
   });
 
-  return Object.keys(sections).map(title => ({title, data: sections[title]}));
+  return [
+    {
+      title: dict('source'),
+      data: [{name: dict('sourceUrl'), link: dict('sourceUrl')}],
+    },
+    ...sort(
+      Object.keys(sections).map(title => ({title, data: sections[title]})),
+    ),
+  ];
 }
 
 function useCategoriesList(): null | Error | Array<Category> {
@@ -138,7 +147,9 @@ function useCategoriesList(): null | Error | Array<Category> {
     setCategories(null);
     (async () => {
       try {
-        const response = await fetch(dict('urlCategories'));
+        const response = await fetch(dict('urlCategories'), {
+          cache: 'no-cache',
+        });
         const responseText = await response.text();
         const root = parse(responseText);
         const links = root.querySelectorAll(dict('selectorCategories'));
@@ -162,4 +173,14 @@ function useCategoriesList(): null | Error | Array<Category> {
   }, [dict]);
 
   return categories;
+}
+
+const charMapL = ' 0123456789aábcčdďeéěfghiíjklmnňoópqrřsštťuúůvwxyýzž';
+function sort(data) {
+  return data.sort((a, b) => {
+    const aIndex = charMapL.indexOf(a.title.charAt(0).toLowerCase());
+    const bIndex = charMapL.indexOf(b.title.charAt(0).toLowerCase());
+
+    return aIndex - bIndex;
+  });
 }
