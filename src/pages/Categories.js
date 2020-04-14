@@ -119,7 +119,7 @@ function getSections(categories: Array<Category>, dict: string => string) {
   const sections = {};
 
   categories.forEach(category => {
-    const title = category.name.charAt(0);
+    const title = category.name.charAt(0).toUpperCase();
     if (!sections[title]) {
       sections[title] = [];
     }
@@ -175,11 +175,11 @@ function useCategoriesList(): null | Error | Array<Category> {
   return categories;
 }
 
-const charMapL = ' 0123456789aábcčdďeéěfghiíjklmnňoópqrřsštťuúůvwxyýzž';
+const charMap = ' 0123456789AÁBCČDĎEÉĚFGHIÍJKLMNŇOÓPQRŘSŠTŤUÚŮVWXYÝZŽ';
 function sort(data) {
   return data.sort((a, b) => {
-    const aIndex = charMapL.indexOf(a.title.charAt(0).toLowerCase());
-    const bIndex = charMapL.indexOf(b.title.charAt(0).toLowerCase());
+    const aIndex = charMap.indexOf(a.title);
+    const bIndex = charMap.indexOf(b.title);
 
     return aIndex - bIndex;
   });
