@@ -191,6 +191,8 @@ function playSound(
       playTen(lang);
     } else if (time === half && time > 0) {
       playHalf(lang);
+    } else if (time === timerFrom) {
+      playTik();
     }
   }
 }
