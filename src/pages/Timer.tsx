@@ -1,8 +1,3 @@
-/**
- * @format
- * @flow
- */
-
 import React, { useState } from 'react';
 import KeepAwake from '@sayem314/react-native-keep-awake';
 import Icon from '@react-native-vector-icons/material-design-icons';
@@ -113,11 +108,11 @@ export default function Timer() {
           {time > 0 && (
             <View style={{ flexDirection: 'row' }}>
               <Button onPress={() => handlePause()}>
-                <Icon name={run ? 'pause' : 'play'} />
+                <Icon name={run ? 'pause' : 'play'} size={20} />
               </Button>
               <View style={{ width: 16 }} />
               <Button onPress={() => handleStop()}>
-                <Icon name={'stop'} />
+                <Icon name={'stop'} size={20} />
               </Button>
               <KeepAwake />
             </View>

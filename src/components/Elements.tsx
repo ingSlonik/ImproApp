@@ -5,6 +5,8 @@ import {
   Text,
   Modal as ModalNative,
   TouchableNativeFeedback,
+  StyleProp,
+  ViewStyle,
 } from 'react-native';
 
 import Icon, { MaterialDesignIconsIconName } from '@react-native-vector-icons/material-design-icons';
@@ -42,24 +44,18 @@ export function H2({ children }: { children: ReactNode }): ReactNode {
   );
 }
 
-export function Button({
-  children,
-  onPress,
-}: {
-  children: ReactNode,
-  onPress: () => void,
-}): ReactNode {
-  // return <ButtonNative onPress={onPress} title={children} />;
+export function Button({ style, children, onPress, }: { style?: ViewStyle, children: ReactNode, onPress: () => void, }): ReactNode {
+
   return (
     <TouchableNativeFeedback onPress={onPress}>
       <View
-        style={{
+        style={[{
           flexGrow: 1,
-          borderRadius: 2,
+          borderRadius: 8,
           backgroundColor: primary,
           justifyContent: 'center',
           alignItems: 'center',
-        }}>
+        }, style]}>
         <Text
           style={{
             color: primaryText,

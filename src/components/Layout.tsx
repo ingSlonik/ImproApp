@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, StatusBar } from 'react-native';
+import { View, StatusBar, SafeAreaView } from 'react-native';
 
 import Toolbar from './Toolbar';
 import Navigation from './Navigation';
@@ -13,7 +13,7 @@ import Categories from '../pages/Categories';
 
 export default function Layout() {
   const [page, setPage] = useState('generator');
-  return <>
+  return <SafeAreaView style={{ flex: 1, backgroundColor: backgroundPrimary }}>
     <StatusBar backgroundColor={backgroundPrimary} barStyle="dark-content" />
     <View style={{ flex: 1, alignItems: 'stretch' }}>
       <Toolbar />
@@ -25,5 +25,5 @@ export default function Layout() {
       </View>
       <Navigation active={page} onChange={setPage} />
     </View>
-  </>;
+  </SafeAreaView>;
 }

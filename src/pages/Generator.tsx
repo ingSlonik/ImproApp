@@ -44,7 +44,7 @@ export default function Generator() {
     <View style={{ flexGrow: 1, justifyContent: 'space-around' }}>
       <View>
         <H2>
-          {dict('theme')} ({getCountAdjectives(lang)}, {getCountNouns(lang)})
+          {dict('theme')}
         </H2>
         <View style={{ flexDirection: 'row' }}>
           <View style={{ flexGrow: 1, flexBasis: 100, alignItems: 'stretch' }}>
@@ -64,22 +64,26 @@ export default function Generator() {
       </View>
 
       <View>
-        <H2>
-          {dict('place')} ({getCountPlaces(lang)})
-        </H2>
-        <Button onPress={() => setPlace(getRandomPlace(lang))}>
-          {dict('generatePlace')}
-        </Button>
+        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+          <H2>
+            {dict('place')}
+          </H2>
+          <Button style={{ flexGrow: 0 }} onPress={() => setPlace(getRandomPlace(lang))}>
+            {dict('generatePlace')}
+          </Button>
+        </View>
         <Word>{place}</Word>
       </View>
 
       <View>
-        <H2>
-          {dict('genre')} ({getCountGenres(lang)})
-        </H2>
-        <Button onPress={() => setGenre(getRandomGenre(lang))}>
-          {dict('generateGenre')}
-        </Button>
+        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+          <H2>
+            {dict('genre')}
+          </H2>
+          <Button style={{ flexGrow: 0 }} onPress={() => setGenre(getRandomGenre(lang))}>
+            {dict('generateGenre')}
+          </Button>
+        </View>
         <Word>{genre}</Word>
       </View>
     </View>

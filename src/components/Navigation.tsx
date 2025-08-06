@@ -1,11 +1,10 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { View, Text, Pressable, Linking, Animated } from 'react-native';
+import React, { useEffect, useRef } from 'react';
+import { View, Text, Pressable, Animated } from 'react-native';
 
 import Icon, { MaterialDesignIconsIconName } from '@react-native-vector-icons/material-design-icons';
 
 import { useDictionary } from '../services/language';
 
-import { Modal } from './Elements';
 import { backgroundSecondary, primary } from '../services/colors';
 
 export default function Navigation({ active, onChange, }: {
@@ -21,6 +20,7 @@ export default function Navigation({ active, onChange, }: {
       backgroundColor: backgroundSecondary,
       borderTopLeftRadius: 20,
       borderTopRightRadius: 20,
+      paddingBottom: 5,
     }}>
       <NavItem
         active={active === 'generator'}
