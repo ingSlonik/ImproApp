@@ -13,9 +13,12 @@ import Categories from '../pages/Categories';
 
 export default function Layout() {
   const [page, setPage] = useState('generator');
-  return <SafeAreaView style={{ flex: 1, backgroundColor: backgroundPrimary }}>
-    <StatusBar backgroundColor={backgroundPrimary} barStyle="dark-content" />
-    <View style={{ flex: 1, alignItems: 'stretch' }}>
+  return <View style={{ flex: 1, backgroundColor: backgroundPrimary }}>
+
+    <StatusBar barStyle="dark-content" backgroundColor={"transparent"} translucent={true} />
+    <View style={{ height: StatusBar.currentHeight }} />
+
+    <SafeAreaView style={{ flex: 1, alignItems: 'stretch' }}>
       <Toolbar />
       <View style={{ flexGrow: 1 }}>
         {page === 'generator' && <Generator />}
@@ -24,6 +27,6 @@ export default function Layout() {
         {page === 'about' && <About />}
       </View>
       <Navigation active={page} onChange={setPage} />
-    </View>
-  </SafeAreaView>;
+    </SafeAreaView>
+  </View>;
 }
