@@ -39,7 +39,7 @@ export function H1({ children }: { children: ReactNode }): ReactNode {
 export function H2({ children }: { children: ReactNode }): ReactNode {
   return (
     <View>
-      <Text style={{ fontSize: 25, color: primaryText }}>{children}</Text>
+      <Text style={{ fontSize: 25, color: primaryText, fontWeight: '600' }}>{children}</Text>
     </View>
   );
 }

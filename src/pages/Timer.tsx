@@ -85,47 +85,39 @@ export default function Timer() {
 
       <View style={{ flexGrow: 1, justifyContent: 'space-between' }}>
         <View style={{ flexGrow: 1, justifyContent: 'center' }}>
-          <View style={{ flexDirection: 'row' }}>
+          <View style={{ flexDirection: 'row', gap: 16, alignItems: "center" }}>
             <Text style={{ fontSize: 20 }}>
               {timerFrom > 0 && <Time>{timerFrom}</Time>}
             </Text>
-            {!run && time === 0 && timerFrom > 0 && (
-              <View style={{ flexDirection: 'row', marginLeft: 16 }}>
-                <Button onPress={() => handleStartTimer(timerFrom)}>
-                  <Icon name="repeat" />
-                </Button>
-                <View style={{ width: 16 }} />
-                <Button
-                  onPress={() => handleStartTimer(Math.round(timerFrom / 2))}>
-                  {dict('halfTime')}
-                </Button>
-              </View>
-            )}
+            {!run && time === 0 && timerFrom > 0 && <>
+              <Button style={{ flexGrow: 0 }} onPress={() => handleStartTimer(timerFrom)}>
+                <Icon name="repeat" size={18} />
+              </Button>
+
+              <Button style={{ flexGrow: 0 }}
+                onPress={() => handleStartTimer(Math.round(timerFrom / 2))}>
+                {dict('halfTime')}
+              </Button>
+            </>}
           </View>
           <Text style={{ fontSize: 100, textAlign: 'center' }}>
             <Time>{Number(time)}</Time>
           </Text>
-          {time > 0 && (
-            <View style={{ flexDirection: 'row' }}>
-              <Button onPress={() => handlePause()}>
-                <Icon name={run ? 'pause' : 'play'} size={20} />
-              </Button>
-              <View style={{ width: 16 }} />
-              <Button onPress={() => handleStop()}>
-                <Icon name={'stop'} size={20} />
-              </Button>
-              <KeepAwake />
-            </View>
-          )}
+          {time > 0 && <View style={{ flexDirection: 'row', gap: 16 }}>
+            <Button onPress={() => handlePause()}>
+              <Icon name={run ? 'pause' : 'play'} size={20} />
+            </Button>
+            <Button onPress={() => handleStop()}>
+              <Icon name={'stop'} size={20} />
+            </Button>
+            <KeepAwake />
+          </View>}
         </View>
 
-        <View style={{ flexDirection: 'row' }}>
+        <View style={{ flexDirection: 'row', gap: 16 }}>
           <Button onPress={() => handleStartTimer(300)}>5:00</Button>
-          <View style={{ width: 16 }} />
           <Button onPress={() => handleStartTimer(120)}>2:00</Button>
-          <View style={{ width: 16 }} />
           <Button onPress={() => handleStartTimer(60)}>1:00</Button>
-          <View style={{ width: 16 }} />
           <Button onPress={() => handleStartTimer(30)}>0:30</Button>
         </View>
         <View
