@@ -4,8 +4,8 @@ Your assistant in theatre improvisation.
 
 ## Download
 
-* [Google play](https://play.google.com/store/apps/details?id=com.improapp)
-* *App store* (after some donations)
+- [Google play](https://play.google.com/store/apps/details?id=com.improapp)
+- _App store_ (after some donations)
 
 ## Funkce
 
@@ -19,7 +19,7 @@ Your assistant in theatre improvisation.
 - [x] Random word generator.
 - [x] List of categories with description.
   - [x] CZ ImproWiki
-  - [X] EN Improv Encyclopedia
+  - [x] EN Improv Encyclopedia
   - [ ] Favorite categories.
 - [ ] iOS app.
 - [ ] Custom edition of random words.
@@ -42,5 +42,5 @@ Your assistant in theatre improvisation.
 
 ## Donation
 
-If this app helps you, don't hesitate to buy me a beer.
-I believe that you will find my mail. ;-)
+If this app helps you, don't hesitate to buy me a beer. I believe that you will
+find my mail. ;-)
