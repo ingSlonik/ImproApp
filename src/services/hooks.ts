@@ -17,9 +17,10 @@ export function useTimer(onChange: (time: number) => void) {
   useEffect(() => {
     if (timeFrom !== null) {
       const dateStart = Date.now();
-      const interval = setInterval(() => {
+
+      function tick() {
         const dateNow = Date.now();
-        const newTime = timeFrom - Math.floor((dateNow - dateStart) / 1000);
+        const newTime = (timeFrom || 0) - Math.floor((dateNow - dateStart) / 1000);
         if (newTime >= 0) {
           refOnChange.current(newTime);
           setTime(newTime);
@@ -32,7 +33,10 @@ export function useTimer(onChange: (time: number) => void) {
           setTimeFrom(null);
           clearInterval(interval);
         }
-      }, 1000);
+      }
+
+      const interval = setInterval(tick, 1000);
+      tick();
 
       return () => {
         clearInterval(interval);
