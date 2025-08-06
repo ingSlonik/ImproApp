@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, TouchableNativeFeedback, Linking } from 'react-native';
+import { View, Text, TouchableNativeFeedback, Linking, Pressable } from 'react-native';
 import Icon from '@react-native-vector-icons/material-design-icons';
 
 import { Content, H1, H2, Button } from '../components/Elements';
 
 import { useDictionary, useLang } from '../services/language';
 
-import { backgroundSecondary } from '../services/colors';
+import { backgroundSecondary, secondaryText } from '../services/colors';
 import {
   getRandomAdjective,
   getRandomGenre,
@@ -29,6 +29,7 @@ export default function Generator() {
         <H1>{dict('wordGenerator')}</H1>
       </View>
       <Button
+        style={{ alignItems: "center" }}
         onPress={() => {
           setAdjective(getRandomAdjective(lang));
           setNoun(getRandomNoun(lang));
@@ -38,51 +39,33 @@ export default function Generator() {
         {dict('all')}
       </Button>
     </View>
+
     <View style={{ flexGrow: 1, justifyContent: 'space-around' }}>
       <View>
-        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-          <H2>
-            {dict('theme')}
-          </H2>
-          <View style={{ flexDirection: 'row', gap: 10 }}>
-            <Button onPress={() => setAdjective(getRandomAdjective(lang))}>
-              {dict('adjective')}
-            </Button>
-            <Button onPress={() => setNoun(getRandomNoun(lang))}>
-              {dict('noun')}
-            </Button>
-          </View>
-        </View>
+        <H2>
+          {dict('theme')}
+        </H2>
         <View style={{ flexDirection: 'row', gap: 10 }}>
-          <View style={{ flexGrow: 1, flexBasis: 100 }}><Word>{adjective}</Word></View>
-          <View style={{ flexGrow: 1, flexBasis: 100 }}><Word>{noun}</Word></View>
+          <View style={{ flexGrow: 1, flexBasis: 100 }}><Word onPress={() => setAdjective(getRandomAdjective(lang))}>{adjective}</Word></View>
+          <View style={{ flexGrow: 1, flexBasis: 100 }}><Word onPress={() => setNoun(getRandomNoun(lang))}>{noun}</Word></View>
         </View>
       </View>
 
       <View>
-        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-          <H2>
-            {dict('place')}
-          </H2>
-          <Button style={{ flexGrow: 0 }} onPress={() => setPlace(getRandomPlace(lang))}>
-            {dict('generatePlace')}
-          </Button>
-        </View>
-        <Word>{place}</Word>
+        <H2>
+          {dict('place')}
+        </H2>
+        <Word onPress={() => setPlace(getRandomPlace(lang))}>{place}</Word>
       </View>
 
       <View>
-        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-          <H2>
-            {dict('genre')}
-          </H2>
-          <Button style={{ flexGrow: 0 }} onPress={() => setGenre(getRandomGenre(lang))}>
-            {dict('generateGenre')}
-          </Button>
-        </View>
-        <Word>{genre}</Word>
+        <H2>
+          {dict('genre')}
+        </H2>
+        <Word onPress={() => setGenre(getRandomGenre(lang))}>{genre}</Word>
       </View>
     </View>
+
     <TouchableNativeFeedback
       onPress={() => Linking.openURL('https://github.com/ingSlonik/ImproApp')}>
       <Text>
@@ -92,14 +75,21 @@ export default function Generator() {
   </Content >;
 }
 
-function Word({ children }: { children: string }) {
-  return <View style={{
-    backgroundColor: backgroundSecondary,
-    borderRadius: 8,
-    paddingTop: 2,
-    paddingBottom: 4,
-    marginTop: 8,
-  }}>
-    <Text style={{ fontSize: 25, textAlign: 'center' }}>{children}</Text>
-  </View>;
+function Word({ children, onPress }: { children: string, onPress: () => void }) {
+  return <Pressable onPress={onPress} style={{ flex: 1 }}>
+    <View style={{
+      flexDirection: "row",
+      alignItems: "center",
+      backgroundColor: backgroundSecondary,
+      borderRadius: 8,
+      paddingTop: 2,
+      paddingBottom: 4,
+      marginTop: 8,
+    }}>
+      <Text style={{ flexGrow: 1, fontSize: 25, textAlign: 'center' }}>{children}</Text>
+      <View style={{ paddingHorizontal: 8 }}>
+        <Icon name="repeat" size={20} color={secondaryText} />
+      </View>
+    </View>
+  </Pressable>;
 }
