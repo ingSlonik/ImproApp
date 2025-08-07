@@ -6,9 +6,11 @@ import React, {
   useContext,
   useMemo,
   type ReactNode,
+  useEffect,
 } from 'react';
 
 import { getLocales } from "react-native-localize";
+import { loadLang, saveLang } from './db';
 
 export type Lang = 'cs' | 'en';
 
@@ -28,12 +30,27 @@ const LangContext = createContext<LangContextProps>({
 
 export function LangProvider({ children }: { children: ReactNode }) {
   const [lang, setLang] = useState(getDefaultLang());
+
+  useEffect(() => {
+    loadLang().then(lang => {
+      if (lang)
+        setLang(lang);
+    });
+
+    setLang(getDefaultLang());
+  }, []);
+
+  const setLangMemo = useMemo(() => (lang: Lang) => {
+    saveLang(lang);
+    setLang(lang);
+  }, []);
+
   return (
     <LangContext.Provider
       value={{
         lang,
         langList,
-        setLang,
+        setLang: setLangMemo,
       }}>
       {children}
     </LangContext.Provider>

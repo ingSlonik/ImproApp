@@ -23,6 +23,13 @@ export default function Generator() {
   const [noun, setNoun] = useState(() => getRandomPlace(lang));
   const [place, setPlace] = useState(() => getRandomGenre(lang));
 
+  useEffect(() => {
+    setAdjective(getRandomAdjective(lang));
+    setNoun(getRandomNoun(lang));
+    setPlace(getRandomPlace(lang));
+    setGenre(getRandomGenre(lang));
+  }, [lang]);
+
   return <Content>
     <View style={{ flexDirection: 'row', alignItems: 'center' }}>
       <View style={{ flexGrow: 10 }}>
@@ -76,7 +83,7 @@ export default function Generator() {
 }
 
 function Word({ children, onPress }: { children: string, onPress: () => void }) {
-  return <Pressable onPress={onPress} style={{ flex: 1 }}>
+  return <Pressable onPress={onPress}>
     <View style={{
       flexDirection: "row",
       alignItems: "center",
