@@ -54,15 +54,10 @@ function NavItem({ active, icon, text, onPress }: { active: boolean, icon: Mater
 
   const animatedWidth = useRef(new Animated.Value(active ? 50 : 0)).current;
 
-  // Efekt, který se spustí při každé změně `active` prop
   useEffect(() => {
-    // Vytvoříme animaci
     Animated.timing(animatedWidth, {
-      // Cílová hodnota šířky: 50, pokud je active, jinak 0
       toValue: active ? 50 : 0,
-      // Délka animace v milisekundách
       duration: 300,
-      // Umožní použití nativního driveru pro lepší výkon
       useNativeDriver: false,
     }).start();
   }, [active, animatedWidth]);

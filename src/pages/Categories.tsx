@@ -1,10 +1,8 @@
 
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import {
-  ActivityIndicator,
   View,
   Text,
-  BackHandler,
   SectionList,
   TouchableNativeFeedback,
   Linking,
@@ -14,7 +12,7 @@ import { useLang, useDictionary } from '../services/language';
 
 import categoriesCS from "../dictionaries/categoriesCs.json";
 import categoriesEN from "../dictionaries/categoriesEn.json"
-import { backgroundPrimary, backgroundSecondary } from '../services/colors';
+import { backgroundSecondary } from '../services/colors';
 
 type Category = { name: string, link: string };
 
@@ -24,23 +22,17 @@ export default function Categories() {
 
   const categories = lang === 'cs' ? categoriesCS : categoriesEN;
 
-  return (
-    <View style={{ flexGrow: 1, justifyContent: 'center' }}>
-
-      <SectionList
-        // With height 50% fixed issues https://stackoverflow.com/questions/49570059/scroll-area-too-small-with-sectionlist-react-native
-        style={{ flexGrow: 1, height: '50%', position: 'relative', zIndex: 1 }}
-        stickySectionHeadersEnabled
-        sections={getSections(categories, dict)}
-        keyExtractor={(item, index) => item.name + index}
-        renderItem={({ item }) => <Item {...item} onPress={link => Linking.openURL(link)} />}
-        renderSectionHeader={({ section: { title } }) => (
-          <SelectionHeader>{title}</SelectionHeader>
-        )}
-      />
-
-    </View>
-  );
+  return <View style={{ flex: 1 }}>
+    <SectionList
+      stickySectionHeadersEnabled
+      sections={getSections(categories, dict)}
+      keyExtractor={(item, index) => item.name + index}
+      renderItem={({ item }) => <Item {...item} onPress={link => Linking.openURL(link)} />}
+      renderSectionHeader={({ section: { title } }) => (
+        <SelectionHeader>{title}</SelectionHeader>
+      )}
+    />
+  </View>;
 }
 
 function SelectionHeader({ children }: { children: string }) {
@@ -50,6 +42,7 @@ function SelectionHeader({ children }: { children: string }) {
         paddingVertical: 4,
         paddingHorizontal: 16,
         backgroundColor: backgroundSecondary,
+        borderRadius: 4,
       }}>
       <Text style={{ fontWeight: 'bold' }}>{children}</Text>
     </View>
