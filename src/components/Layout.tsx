@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { View, StatusBar, SafeAreaView, Animated, useWindowDimensions } from 'react-native';
+import { View, StatusBar, Animated, useWindowDimensions } from 'react-native';
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 
 import Toolbar from './Toolbar';
 import Navigation from './Navigation';
@@ -37,10 +38,9 @@ export default function Layout() {
       Animated.timing(animatedAbout, { toValue: 1, duration: 300, useNativeDriver: true }).start();
   }, [page, width]);
 
-  return <View style={{ flex: 1, backgroundColor: backgroundPrimary }}>
+  return <SafeAreaProvider style={{ flex: 1, backgroundColor: backgroundPrimary }}>
 
     <StatusBar barStyle="dark-content" backgroundColor={"transparent"} translucent={true} />
-    <View style={{ height: StatusBar.currentHeight }} />
 
     <SafeAreaView style={{ flex: 1, alignItems: 'stretch' }}>
       <Toolbar />
@@ -51,6 +51,6 @@ export default function Layout() {
         <Animated.View style={{ transform: [{ translateX: animatedAbout.interpolate({ inputRange: [0, 1], outputRange: [width, 0] }) }], opacity: animatedAbout, zIndex: page === "about" ? 2 : 1, position: "absolute", top: 0, left: 0, width: "100%", height: "100%", backgroundColor: backgroundPrimary }}><About /></Animated.View>
       </View>
       <Navigation active={page} onChange={setPage} />
-    </SafeAreaView >
-  </View >;
+    </SafeAreaView>
+  </SafeAreaProvider>;
 }

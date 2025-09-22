@@ -20,7 +20,6 @@ export default function Navigation({ active, onChange, }: {
       backgroundColor: backgroundSecondary,
       borderTopLeftRadius: 20,
       borderTopRightRadius: 20,
-      paddingBottom: 5,
     }}>
       <NavItem
         active={active === 'generator'}
