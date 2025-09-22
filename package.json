@@ -1,6 +1,6 @@
 {
   "name": "ImproApp",
-  "version": "3.0.3",
+  "version": "3.0.4",
   "private": true,
   "scripts": {
     "android": "react-native run-android",
@@ -18,6 +18,7 @@
     "react": "19.1.0",
     "react-native": "0.80.2",
     "react-native-localize": "^3.5.1",
+    "react-native-safe-area-context": "^5.6.1",
     "react-native-sound": "^0.12.0"
   },
   "devDependencies": {
