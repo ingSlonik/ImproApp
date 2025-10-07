@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import {
   View,
   Text,
@@ -8,26 +8,29 @@ import {
   Linking,
 } from 'react-native';
 
+import Icon from '@react-native-vector-icons/material-design-icons';
+
 import { useLang, useDictionary } from '../services/language';
 
 import categoriesCS from "../dictionaries/categoriesCs.json";
 import categoriesEN from "../dictionaries/categoriesEn.json"
 import { backgroundSecondary } from '../services/colors';
+import { loadCategories, toggleCategory } from '../services/db';
 
-type Category = { name: string, link: string };
+export type Category = { name: string, link: string };
+type CategoryFavorite = Category & { favorite: boolean };
+
 
 export default function Categories() {
-  const { lang } = useLang();
-  const dict = useDictionary();
 
-  const categories = lang === 'cs' ? categoriesCS : categoriesEN;
+  const { sections, toggleFavorite } = useFavoriteCategories();
 
   return <View style={{ flex: 1 }}>
     <SectionList
       stickySectionHeadersEnabled
-      sections={getSections(categories, dict)}
+      sections={sections}
       keyExtractor={(item, index) => item.name + index}
-      renderItem={({ item }) => <Item {...item} onPress={link => Linking.openURL(link)} />}
+      renderItem={({ item }) => <Item {...item} onPress={link => Linking.openURL(link)} onFavorite={toggleFavorite} />}
       renderSectionHeader={({ section: { title } }) => (
         <SelectionHeader>{title}</SelectionHeader>
       )}
@@ -35,50 +38,78 @@ export default function Categories() {
   </View>;
 }
 
-function SelectionHeader({ children }: { children: string }) {
-  return (
-    <View
-      style={{
-        paddingVertical: 4,
-        paddingHorizontal: 16,
-        backgroundColor: backgroundSecondary,
-        borderRadius: 4,
-      }}>
-      <Text style={{ fontWeight: 'bold' }}>{children}</Text>
-    </View>
-  );
+function useFavoriteCategories() {
+  const { lang } = useLang();
+  const dict = useDictionary();
+
+  const categories = lang === 'cs' ? categoriesCS : categoriesEN;
+
+  const [categoriesFavorite, setCategoriesFavorite] = useState<Category[]>([]);
+
+  const loadFavorites = () => {
+    loadCategories().then(setCategoriesFavorite);
+  };
+
+  const toggleFavorite = (category: Category) => {
+    toggleCategory(category).then(loadFavorites);
+  };
+
+  const sections = useMemo(() => {
+    const sections: Record<string, CategoryFavorite[]> = {};
+
+    categories.forEach(category => {
+      const title = category.name.charAt(0).toUpperCase();
+      if (!sections[title]) {
+        sections[title] = [];
+      }
+      const index = categoriesFavorite.findIndex(c => c.name === category.name);
+      sections[title].push({ ...category, favorite: index >= 0 });
+    });
+
+    return [
+      {
+        title: dict('source'),
+        data: [{ name: dict('sourceUrl'), link: dict('sourceUrl') }],
+      },
+      ...(categoriesFavorite.length === 0 ? [] : [{
+        title: dict('favorite'),
+        data: categoriesFavorite.map(category => ({ ...category, favorite: true })).sort((a, b) => a.name.localeCompare(b.name)),
+      }]),
+      ...sort(
+        Object.keys(sections).map(title => ({ title, data: sections[title] })),
+      ),
+    ];
+
+  }, [categories, categoriesFavorite]);
+
+  return { sections, toggleFavorite };
 }
 
-function Item({ name, link, onPress }: Category & { onPress: (link: string) => void }) {
-  return (
+function SelectionHeader({ children }: { children: string }) {
+  return <View
+    style={{
+      paddingVertical: 4,
+      paddingHorizontal: 16,
+      backgroundColor: backgroundSecondary,
+      borderRadius: 4,
+    }}>
+    <Text style={{ fontWeight: 'bold' }}>{children}</Text>
+  </View>;
+}
+
+function Item({ name, link, favorite, onPress, onFavorite }: Category & { favorite?: boolean, onPress: (link: string) => void, onFavorite: (category: Category) => void }) {
+  return <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
     <TouchableNativeFeedback onPress={() => onPress(link)}>
       <View style={{ padding: 16 }}>
         <Text>{name}</Text>
       </View>
     </TouchableNativeFeedback>
-  );
-}
-
-function getSections(categories: Category[], dict: (word: string) => string) {
-  const sections: Record<string, Category[]> = {};
-
-  categories.forEach(category => {
-    const title = category.name.charAt(0).toUpperCase();
-    if (!sections[title]) {
-      sections[title] = [];
-    }
-    sections[title].push(category);
-  });
-
-  return [
-    {
-      title: dict('source'),
-      data: [{ name: dict('sourceUrl'), link: dict('sourceUrl') }],
-    },
-    ...sort(
-      Object.keys(sections).map(title => ({ title, data: sections[title] })),
-    ),
-  ];
+    {typeof favorite === 'boolean' && <TouchableNativeFeedback onPress={() => onFavorite({ name, link })}>
+      <View style={{ paddingHorizontal: 16, paddingVertical: 8 }}>
+        <Icon name={favorite ? "star" : "star-outline"} size={22} />
+      </View>
+    </TouchableNativeFeedback>}
+  </View>;
 }
 
 

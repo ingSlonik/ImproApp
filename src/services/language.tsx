@@ -166,6 +166,10 @@ const dictionary: { [word: string]: Record<Lang, string> } = {
     cs: 'Zdroj',
     en: 'Source',
   },
+  favorite: {
+    cs: 'Oblíbené',
+    en: 'Favorite',
+  },
   sourceUrl: {
     cs: 'https://wiki.improliga.cz',
     en: 'http://improvencyclopedia.org',
