@@ -24,6 +24,7 @@ export default function About() {
       </Text>
       .
     </Text>
+    <Text style={{ paddingTop: 8, fontWeight: 'bold', textAlign: "center", fontSize: 22 }}>K.OP.R</Text>
     <Text style={{ paddingTop: 16 }}>{dict('about2')}</Text>
     <Text style={{ paddingTop: 16 }}>{dict('about3')}</Text>
 
